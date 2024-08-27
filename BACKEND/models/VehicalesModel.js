@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const VehicaleAssetsSchema = new schema({
-    Type:{
+    
+    Vehicale_Type:{
         type : String,
         required: true
     },

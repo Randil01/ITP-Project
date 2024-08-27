@@ -1,11 +1,11 @@
-const router = require("express").Router;
+const router = require("express").Router();
 const VehicaleAssets = require("../models/VehicalesModel");
 let vehicle = require("../models/VehicalesModel");
 
 //creating one calling-add
 router.route("/add").post((req,res)=>{
     
-    const type = req.body.type;
+    const Vehicale_Type = req.body.Vehicale_Type;
     const RecivedDate = Date(req.body.RecivedDate);
     const LastMaintanceDate = Date(req.body.LastMaintanceDate);
     const ReserveStatues = req.body.ReserveStatues;
@@ -13,7 +13,7 @@ router.route("/add").post((req,res)=>{
 
     const newVehicale = new vehicle({//vehicale object
 
-        type,
+        Vehicale_Type,
         RecivedDate,
         LastMaintanceDate,
         ReserveStatues,
@@ -43,7 +43,7 @@ router.route("/updateVehi/:id").put(async(req,res)=>{//can use post(put)
     const {type,recivedDate,MaintanceDate,reserveStatues,descrption} = req.body;//getdetails
 
     const upadteVehi = {
-        type,
+        Vehicale_Type,
         RecivedDate,
         LastMaintanceDate,
         ReserveStatues,
