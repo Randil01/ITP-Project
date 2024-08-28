@@ -40,7 +40,7 @@ router.route("/displayVehi").get((req,res)=>{
 //upadte record
 router.route("/updateVehi/:id").put(async(req,res)=>{//can use post(put)
     let vehiId = req.params.id;//param mean parameter above id is id
-    const {type,recivedDate,MaintanceDate,reserveStatues,descrption} = req.body;//getdetails
+    const {Vehicale_Type,RecivedDate,LastMaintanceDate,ReserveStatues,Descrption} = req.body;//getdetails
 
     const upadteVehi = {
         Vehicale_Type,
@@ -51,7 +51,7 @@ router.route("/updateVehi/:id").put(async(req,res)=>{//can use post(put)
     }
     const update = await vehicle.findByIdAndUpdate(vehiId,upadteVehi).then(()=>{//check vehi is avibale update object above
         //data pass to frontend
-        res.status(200).send({status:"User updated",user:update})//user:update showed update data
+        res.status(200).send({status:"User updated"})//user:update showed update data
 
     }).catch((err)=>{
         console.log(err.message);
