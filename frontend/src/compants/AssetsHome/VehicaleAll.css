@@ -60,6 +60,21 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.btn-add{
+    background-color:slategrey;
+    display: block;
+    padding: 10px 20px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
 /* Update button specific styles */
 .btn-update {
     background-color: #4CAF50; /* Green */
@@ -71,7 +86,6 @@ body {
     background-color: #45a049;
 }
 
-/* Delete button specific styles */
 .btn-delete {
     background-color: #f44336; /* Red */
     color: white;
@@ -82,7 +96,6 @@ body {
     background-color: #d32f2f;
 }
 
-/* Responsive behavior */
 @media (max-width: 768px) {
     .vehicle-item {
         width: 90%;

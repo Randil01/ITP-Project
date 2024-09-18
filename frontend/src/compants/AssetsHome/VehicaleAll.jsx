@@ -33,6 +33,7 @@ function Vehicale(){
               </div>
             ))}
             </div>
+            <button /*onClick={() => handleUpdate(vehicale._id)}*/ className="btn-add"> Add New Vehicale </button>
         </div>
     );
 }
