@@ -1,0 +1,40 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #F5F896; 
+    font-size: 30px;
+    border: 1px solid #cccccc00;
+    border-radius: 80px; 
+    height: 100px;
+    width: 500px; 
+    margin: 10px; 
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #b6f56e; /* Slightly darker yellow on hover */
+}
+
+.logout{
+    margin-top: 10px;
+}

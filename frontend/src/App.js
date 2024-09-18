@@ -1,10 +1,19 @@
-import './App.css';
-import Header from './compants/header';
+import { Route, Routes } from "react-router-dom";
+import React from "react";
+import AppHeader from "./compants/header";
+import AsetsHome from "./compants/AssetsHome/assetsHome";
+import VehicaleAll from"./compants/AssetsHome/VehicaleAll"
 
 function App() {
   return (
     <div className="App">
-     <Header/>
+      <React.Fragment>
+        <Routes>
+          <Route path="/" element={<AppHeader/>}/>
+          <Route path="/assetsHome" element={<AsetsHome/>}/>
+          <Route path="/vehicaleall" element={<VehicaleAll/>}/>
+        </Routes>
+      </React.Fragment>
     </div>
   );
 }

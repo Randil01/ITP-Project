@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     font-size: 15px;
+    z-index: 2; /* Ensure the nav stays above the content */
 }
 
 .nav-link {
@@ -43,11 +44,25 @@
     color: white;
     padding: 10px 20px;
     display: block;
-    position: relative;
 }
 
-.dropdown {
-    display: block;
+.nav-item {
+    position: relative; /* Required for button menu positioning */
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.button-menu {
+    display: none; /* Hide the button menu by default */
     position: absolute;
     background-color: white;
     color: black;
@@ -55,18 +70,26 @@
     left: 0;
     padding: 10px 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    z-index: 3; /* Ensure button menu appears above other elements */
+    width: 200px; /* Adjust width as needed */
 }
 
-.dropdown-item {
-    width: 200px;
+.nav-item:hover .button-menu {
+    display: block; /* Show the button menu on hover */
 }
 
-.dropdown-link {
+.button-item {
+    background: none;
+    border: none;
     color: black;
     padding: 10px 20px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
+}
+
+.button-item:hover {
+    background-color: #f1f1f1; /* Add a hover effect for button items */
 }
 
 .council-name {

@@ -1,8 +1,9 @@
 const router = require("express").Router();
-const VehicaleAssets = require("../models/VehicalesModel");
-let vehicle = require("../models/VehicalesModel");
+const VehicaleAssets = require("../../models/Assets/VehicalesModel");
+let vehicle = require("../../models/Assets/VehicalesModel");
 
 //creating one calling-add
+//add new vehi
 router.route("/add").post((req,res)=>{
     
     const Vehicale_Type = req.body.Vehicale_Type;
@@ -23,6 +24,7 @@ router.route("/add").post((req,res)=>{
     newVehicale.save().then(()=>{
         res.json("Vehicale added");
     }).catch((err)=>{
+        res.json("Vehicale not added");
         console.log(err);
     })
 
@@ -36,6 +38,9 @@ router.route("/displayVehi").get((req,res)=>{
         console.log(err)
     })
 })
+
+
+//router.route("/displayOne").
 
 //upadte record
 router.route("/updateVehi/:id").put(async(req,res)=>{//can use post(put)

@@ -1,0 +1,90 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+.head1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 36px;
+    color: #333;
+}
+
+
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Individual vehicle details container */
+.vehicle-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    width: 300px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.vehicle-item:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-item h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.vehicle-item p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Style for buttons */
+.btn-update, .btn-delete {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Update button specific styles */
+.btn-update {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+}
+
+.btn-update:hover {
+    background-color: #45a049;
+}
+
+/* Delete button specific styles */
+.btn-delete {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .vehicle-item {
+        width: 90%;
+    }
+}

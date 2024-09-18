@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 8070;
 app.use(cors());
 app.use(bodyParser.json());
 
+
 const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL,{
@@ -31,5 +32,5 @@ app.listen(PORT,()=>{
 
 //acesss to vehicle.js
 //localhost:8070/vehicles
-const vehicleRouter = require("./routes/Vehicales.js");
-app.use("/vehicles",vehicleRouter);
+const vehicleRouter = require("./routes/Assets/Vehicales.js");
+app.use("/Vehicles",vehicleRouter);
