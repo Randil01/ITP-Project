@@ -26,11 +26,16 @@ connection.once("open",()=>{
     console.log("MongoDB connection sucessfull");
 })
 
-app.listen(PORT,()=>{
-    console.log(`Server is running on port no:${PORT}`);
-})
-
 //acesss to vehicle.js
 //localhost:8070/vehicles
 const vehicleRouter = require("./routes/Assets/Vehicales.js");
 app.use("/Vehicles",vehicleRouter);
+
+const assetsRouter = require("./routes/Assets/publicAssets.js")
+app.use("/publicAssets",assetsRouter);
+
+console.log('Routes set up');
+
+app.listen(PORT,()=>{
+    console.log(`Server is running on port no:${PORT}`);
+})

@@ -1,0 +1,95 @@
+/* Apply background blur effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(244, 244, 244, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(8px); /* Background blur */
+    z-index: -1; /* Sends it behind the form */
+}
+
+/* Container for the form */
+.form-container {
+    position: absolute; /* Absolute to ensure proper positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Slightly reduced max width */
+    width: 90%; /* Take up more space on smaller screens */
+    z-index: 1; /* Ensures the form stays on top */
+}
+
+/* Styling for form elements */
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button container for flex layout */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+/* Submit button styling */
+.form-container button {
+    padding: 8px 16px; /* Increased padding for a larger button */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Slightly larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+/* Back button styling */
+.back-button {
+    background-color: transparent;
+    border: none;
+    color: #4CAF50;
+    font-size: 16px; /* Match font size */
+    cursor: pointer;
+    padding: 8px 16px; /* Increased padding for a larger button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.back-button:hover {
+    color: #45a049;
+    background-color: rgba(76, 175, 80, 0.1); /* Light background on hover */
+}
+
+.back-button:before {
+    content: "← "; /* Arrow before the text */
+    font-size: 20px; /* Adjusted arrow size for better proportion */
+    margin-right: 5px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%; /* Take up more space on smaller screens */
+        padding: 20px;
+    }
+}

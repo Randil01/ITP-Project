@@ -6,14 +6,12 @@ body {
     background-color: #f4f4f4;
 }
 
-
 .head1 {
     text-align: center;
     margin-top: 30px;
     font-size: 36px;
     color: #333;
 }
-
 
 .display {
     display: flex;
@@ -61,7 +59,7 @@ body {
 }
 
 .btn-add{
-    background-color:slategrey;
+    background-color:#f46157;
     display: block;
     padding: 10px 20px;
     margin-top: 50px;

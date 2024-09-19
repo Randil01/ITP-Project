@@ -39,8 +39,21 @@ router.route("/displayVehi").get((req,res)=>{
     })
 })
 
+//display one
+router.route("/displayVehione/:id").get(async (req, res) => {
+    try {
+        const vehicleId = req.params.id;
+        const vehicleData = await vehicle.findById(vehicleId); // Find vehicle by ID
 
-//router.route("/displayOne").
+        if (!vehicleData) {
+            return res.status(404).json({ message: "Vehicle not found" }); 
+        }
+        res.json(vehicleData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server error" });
+    }
+});
 
 //upadte record
 router.route("/updateVehi/:id").put(async(req,res)=>{//can use post(put)
