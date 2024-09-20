@@ -13,6 +13,12 @@ const ManageSalary = () => {
       try {
         const response = await axios.get('http://localhost:5000/employee/');
         setEmployees(response.data);
+        
+        const initialAttendanceDays = {};
+        response.data.forEach(emp => {
+          initialAttendanceDays[emp._id] = emp.empAttDayCount || '';
+        });
+        setAttendanceDays(initialAttendanceDays);
       } catch (error) {
         console.error(error);
       }
@@ -34,20 +40,23 @@ const ManageSalary = () => {
   const handleUpdateAttendance = (id, attDays) => {
     setAttendanceDays({
       ...attendanceDays,
-      [id]: attDays
+      [id]: attDays 
     });
   };
 
-  const handleSubmitAttendance = async () => {
-    for (const [id, attDays] of Object.entries(attendanceDays)) {
-      try {
-        await axios.put(`http://localhost:5000/salary/updateSalary/${id}`, { empAttDayCount: attDays });
-      } catch (error) {
-        console.error(`Error updating attendance for ${id}:`, error);
-      }
+  const handleSubmitAttendance = async (id) => {
+    const attDays = attendanceDays[id];
+    if (!attDays) {
+      alert('Please enter the attendance days');
+      return;
     }
-    alert('Attendance updated successfully');
-    setAttendanceDays({});
+
+    try {
+      await axios.put(`http://localhost:5000/salary/updateSalary/${id}`, { empAttDayCount: attDays });
+      alert('Attendance updated successfully');
+    } catch (error) {
+      console.error(`Error updating attendance for ${id}:`, error);
+    }
   };
 
   const handleDelete = async (id) => {
@@ -99,11 +108,16 @@ const ManageSalary = () => {
               <td>
                 <input 
                   type="number" 
+                  value={attendanceDays[emp._id] || ''}
                   placeholder="Attendance Days" 
                   onChange={(e) => handleUpdateAttendance(emp._id, e.target.value)} 
                   min="0" 
                 />
-                <FaCheckCircle />
+                <FaCheckCircle 
+                  onClick={() => handleSubmitAttendance(emp._id)} 
+                  className="check-icon" // Optional: You can add CSS class for styling
+                  style={{ cursor: 'pointer', color: 'green', marginLeft: '10px' }} // Styling the icon
+                />
               </td>
               <td>
                 <button className="delete-button" onClick={() => handleDelete(emp._id)}>Remove</button>
@@ -112,7 +126,6 @@ const ManageSalary = () => {
           ))}
         </tbody>
       </table>
-      <button className="submit-button" onClick={handleSubmitAttendance}>add Attendance</button>
     </div>
   );
 };
