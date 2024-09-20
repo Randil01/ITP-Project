@@ -53,7 +53,6 @@ router.get('/roles', (req, res) => {
 });
 
 
-
 router.put('/updateRole/:id', async (req, res) => {
     try {
         const { empRole } = req.body;
@@ -80,7 +79,7 @@ router.put('/updateRole/:id', async (req, res) => {
     }
 });
 
-// Create a new employee
+
 router.route('/add').post((req, res) => {
     const { empName, empAddress, empPhone, empEmail, empRole, empAttDayCount } = req.body;
 
@@ -113,7 +112,6 @@ router.route('/:id').get((req, res) => {
         .then(employee => res.json(employee))
         .catch(err => res.status(500).json({ error: err.message }));
 });
-
 
 
 router.route('/delete/:id').delete((req, res) => {

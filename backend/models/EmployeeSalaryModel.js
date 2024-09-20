@@ -27,7 +27,7 @@ const EmployeeSalarySchema = new schema({
     empRole: {
         type: String,
         required: true,
-        enum: ['operator', 'driver', 'servant']
+        enum: ['assistant', 'coordinator', 'manager']
     },
     empBasicSalary: {
         type: Number,
@@ -46,13 +46,13 @@ const EmployeeSalarySchema = new schema({
 
 EmployeeSalarySchema.pre('save', function (next) {
     switch (this.empRole) {
-        case 'operator':
+        case 'assistant':
             this.empBasicSalary = 50000;
             break;
-        case 'driver':
+        case 'coordinator':
             this.empBasicSalary = 40000;
             break;
-        case 'servant':
+        case 'manager':
             this.empBasicSalary = 30000;
             break;
         default:
