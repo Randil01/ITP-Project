@@ -82,7 +82,6 @@ const ManageSalary = () => {
 
   return (
     <div className="manage-salary-container">
-      {/* Header with Go to Main button */}
       <div className="header">
         <h1>Manage Salaries</h1>
         <Link to="/">
@@ -123,8 +122,8 @@ const ManageSalary = () => {
                 />
                 <FaCheckCircle 
                   onClick={() => handleSubmitAttendance(emp._id)} 
-                  className="check-icon" // Optional: You can add CSS class for styling
-                  style={{ cursor: 'pointer', color: 'green', marginLeft: '10px' }} // Styling the icon
+                  className="check-icon" 
+                  style={{ cursor: 'pointer', color: 'green', marginLeft: '10px' }}
                 />
               </td>
               <td>

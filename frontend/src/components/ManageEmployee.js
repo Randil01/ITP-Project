@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ManageEmployee.css';
 import { Link } from 'react-router-dom';
+import './ManageEmployee.css';
+import UpdateEmployee from './UpdateEmployee';
 
 const ManageEmployee = () => {
   const [employees, setEmployees] = useState([]);
+  const [editingId, setEditingId] = useState(null); 
 
   useEffect(() => {
     axios.get('http://localhost:5000/employee/')
@@ -23,19 +25,27 @@ const ManageEmployee = () => {
   };
 
   const handleUpdate = (id) => {
-    alert(`Update functionality for employee ID: ${id} will be implemented.`);
+    setEditingId(id);
+  };
+
+  const handleSave = (updatedEmployee) => {
+    setEmployees(employees.map(emp => emp._id === editingId ? { ...emp, ...updatedEmployee } : emp));
+    setEditingId(null);
+  };
+
+  const handleCancel = () => {
+    setEditingId(null); 
   };
 
   return (
     <div className="manage-employee-container">
-      {/* Header with Go to Main button */}
       <div className="header">
         <h1>Manage Employees</h1>
         <Link to="/">
           <button className="nav-button">Go to main</button>
         </Link>
       </div>
-    
+
       <table className="employee-table">
         <thead>
           <tr>
@@ -48,16 +58,27 @@ const ManageEmployee = () => {
         </thead>
         <tbody>
           {employees.map(emp => (
-            <tr key={emp._id}>
-              <td>{emp.empName}</td>
-              <td>{emp.empAddress}</td>
-              <td>{emp.empPhone}</td>
-              <td>{emp.empEmail}</td>
-              <td>
-                <button className="update-button" onClick={() => handleUpdate(emp._id)}>Update</button>
-                <button className="delete-button" onClick={() => handleDelete(emp._id)}>Delete</button>
-              </td>
-            </tr>
+            editingId === emp._id ? (
+         
+              <UpdateEmployee 
+                key={emp._id}
+                employee={emp}
+                onSave={handleSave}
+                onCancel={handleCancel}
+              />
+            ) : (
+  
+              <tr key={emp._id}>
+                <td>{emp.empName}</td>
+                <td>{emp.empAddress}</td>
+                <td>{emp.empPhone}</td>
+                <td>{emp.empEmail}</td>
+                <td>
+                  <button className="update-button" onClick={() => handleUpdate(emp._id)}>Update</button>
+                  <button className="delete-button" onClick={() => handleDelete(emp._id)}>Delete</button>
+                </td>
+              </tr>
+            )
           ))}
         </tbody>
       </table>

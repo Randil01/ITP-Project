@@ -24,7 +24,7 @@ const DisplayDetails = () => {
 
   return (
     <div className="details-container">
-      {/* Header with navigation buttons */}
+
       <div className="header-buttons">
         <Link to="/addEmployee">
           <button className="nav-button">Add Employee</button>
