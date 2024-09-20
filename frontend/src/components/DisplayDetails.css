@@ -47,6 +47,38 @@
   .delete-button:hover {
     background-color: #d32f2f;
   }
+
+  .details-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .nav-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .right-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
   
   @media (max-width: 600px) {
     .employee-table {

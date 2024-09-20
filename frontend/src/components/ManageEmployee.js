@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ManageEmployee.css';
+import { Link } from 'react-router-dom';
 
 const ManageEmployee = () => {
   const [employees, setEmployees] = useState([]);
@@ -27,7 +28,14 @@ const ManageEmployee = () => {
 
   return (
     <div className="manage-employee-container">
-      <h1>Manage Employees</h1>
+      {/* Header with Go to Main button */}
+      <div className="header">
+        <h1>Manage Employees</h1>
+        <Link to="/">
+          <button className="nav-button">Go to main</button>
+        </Link>
+      </div>
+    
       <table className="employee-table">
         <thead>
           <tr>

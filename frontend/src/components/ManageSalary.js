@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
 import './ManageSalary.css'; 
 import { FaCheckCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ManageSalary = () => {
   const [employees, setEmployees] = useState([]);
@@ -81,7 +82,14 @@ const ManageSalary = () => {
 
   return (
     <div className="manage-salary-container">
-      <h1>Manage Salaries</h1>
+      {/* Header with Go to Main button */}
+      <div className="header">
+        <h1>Manage Salaries</h1>
+        <Link to="/">
+          <button className="nav-button">Go to main</button>
+        </Link>
+      </div>
+      
       <table className="salary-table">
         <thead>
           <tr>

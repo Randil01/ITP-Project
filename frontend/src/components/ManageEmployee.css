@@ -1,67 +1,53 @@
-/* Container styling */
 .manage-employee-container {
-    padding: 20px;
-    background-color: #f0f8e7; 
-    text-align: center;
-  }
-  
-  h1 {
-    color: #4CAF50;
-    margin-bottom: 20px;
-  }
-  
- 
-  .employee-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  .employee-table th, .employee-table td {
-    border: 1px solid #c3d9c6; 
-    padding: 12px;
-    text-align: center;
-  }
-  
-  .employee-table th {
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .employee-table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-  }
-  
-  .employee-table tbody tr:hover {
-    background-color: #ffeb3b;
-  }
-  
-  /* Buttons styling */
-  .update-button, .delete-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .delete-button {
-    background-color: #f44336; 
-  }
-  
-  .update-button:hover {
-    background-color: #388E3C;
-  }
-  
-  .delete-button:hover {
-    background-color: #d32f2f;
-  }
-  
-  @media (max-width: 600px) {
-    .employee-table {
-      font-size: 12px;
-    }
-  }
-  
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th, .employee-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.update-button, .delete-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.update-button:hover, .delete-button:hover {
+  opacity: 0.8;
+}
