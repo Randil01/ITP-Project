@@ -7,29 +7,29 @@ const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
 
-//port access to host
-const PORT = process.env.PORT || 8070;
+const employeeRouter = require("./routes/Employee.js");
+const salaryRouter = require("./routes/Salary.js");
 
+const PORT = process.env.PORT || 5000;
+const URL = process.env.MONGODB_URL;
+const connection = mongoose.connection;
 app.use(cors());
 app.use(bodyParser.json());
 
-const URL = process.env.MONGODB_URL;
 
 mongoose.connect(URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
-const connection = mongoose.connection;
 connection.once("open",()=>{
-    console.log("MongoDB connection sucessfull");
+    console.log("MongoDB connection successful !!");
 })
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port no:${PORT}`);
 })
 
-//acesss to vehicle.js
-//localhost:8070/vehicles
-const vehicleRouter = require("./routes/Vehicales.js");
-app.use("/vehicles",vehicleRouter);
+
+app.use("/employee",employeeRouter);
+app.use("/salary",salaryRouter);
