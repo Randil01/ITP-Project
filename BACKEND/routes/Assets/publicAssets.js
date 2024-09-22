@@ -1,7 +1,7 @@
-const Router = require("express").Router();
+const router = require("express").Router();
 let publicAssets = require("../../models/Assets/publicModel");
 
-Router.route("/addAssets").post((req,res)=>{
+router.route("/addAssets").post((req,res)=>{
     console.log('POST /addAssets endpoint hit');
     const Assets_Type = req.body.Assets_Type;
     const RecivedDate = new Date(req.body.RecivedDate);
@@ -23,14 +23,14 @@ Router.route("/addAssets").post((req,res)=>{
     newAssets.save().then(()=>{
         res.json("public assets added");
     }).catch((err)=>{
-        res.json("Vehicale not added");
+        res.json("public assets not added");
         console.log(err);
     })
 
 });
 
 //display all the data
-Router.route("/displayAssets").get((req,res)=>{
+router.route("/displayAssets").get((req,res)=>{
     publicAssets.find().then((PublicAssets)=>{
         res.json(PublicAssets)
     }).catch((err)=>{
@@ -39,10 +39,10 @@ Router.route("/displayAssets").get((req,res)=>{
 })
 
 //display one
-Router.route("/displayAssetsone/:id").get(async (req, res) => {
+router.route("/displayAssetsone/:id").get(async (req, res) => {
     try {
         const AssetsID = req.params.id;
-        const AssetsData = await vehicle.findById(AssetsID); // Find vehicle by ID
+        const AssetsData = await publicAssets.findById(AssetsID); // Find vehicle by ID
 
         if (!AssetsData) {
             return res.status(404).json({ message: "Assets not found" }); 
@@ -55,7 +55,7 @@ Router.route("/displayAssetsone/:id").get(async (req, res) => {
 });
 
 //upadte record
-Router.route("/updateAssets/:id").put(async(req,res)=>{//can use post(put)
+router.route("/updateAssets/:id").put(async(req,res)=>{//can use post(put)
     let AssetsId = req.params.id;//param mean parameter above id is id
     const {Assets_Type,RecivedDate,ReserveStatues,RecivaedTimePeriod,maintanceCost,Description} = req.body;//getdetails
 
@@ -67,7 +67,7 @@ Router.route("/updateAssets/:id").put(async(req,res)=>{//can use post(put)
         maintanceCost,
         Description 
     }
-    const update = await publicAssets.findByIdAndUpdate(AssetsiId,RecivaedTimePeriod).then(()=>{//check vehi is avibale update object above
+    const update = await publicAssets.findByIdAndUpdate(AssetsId,upadteAssets).then(()=>{//check vehi is avibale update object above
         //data pass to frontend
         res.status(200).send({status:"User updated"})//user:update showed update data
 
@@ -79,7 +79,7 @@ Router.route("/updateAssets/:id").put(async(req,res)=>{//can use post(put)
 })
 
 //Delete vehicale
-Router.route("/deleteAssets/:id").delete(async(req,res)=>{
+router.route("/deleteAssets/:id").delete(async(req,res)=>{
     let AssetsId = req.params.id;
 
     await publicAssets.findByIdAndDelete(AssetsId).then(()=>{
@@ -91,4 +91,4 @@ Router.route("/deleteAssets/:id").delete(async(req,res)=>{
 
 })
 
-module.exports = Router;
+module.exports = router;

@@ -20,6 +20,27 @@ body {
     margin-top: 20px;
 }
 
+/* Styles for search bar */
+.search {
+    top: 20px;
+    right: 20px; 
+    width: 250px; 
+    padding: 10px 15px; 
+    margin-left: 100px;
+    border-radius: 25px;
+    border: 1px solid #0def1c; 
+    outline: none; 
+    font-size: 16px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+    z-index: 1;
+  }
+  
+  .search:focus {
+    border-color: #df2b0b; /* Highlight border when input is focused */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Shadow effect on focus */
+  }
+  
 /* Individual vehicle details container */
 .vehicle-item {
     background-color: #fff;
@@ -63,10 +84,25 @@ body {
     display: block;
     padding: 10px 20px;
     margin-top: 50px;
-    margin-left: auto;
+    margin-left: 10px;
     margin-right: auto;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.btn-pdf{
+    background-color:#f46157;
+    display: block;
+    padding: 10px 20px;
+    margin-top: -40px;
+    margin-left: 190px;
+    margin-right: auto;
+    font-size: 14px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease;

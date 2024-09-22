@@ -14,7 +14,10 @@ const fetchHandler = async() =>{
 
 function Vehicale(){
 
-    const [vehicales, setVehicales] = useState();
+    const [vehicales, setVehicales] = useState([]);
+    //search
+    const [searchQuery, setSearchQuery] = useState('');
+
     useEffect(()=>{
         fetchHandler().then((data)=>setVehicales(data))
     },[])
@@ -33,6 +36,17 @@ function Vehicale(){
         }
     };
 
+    //handle serch
+    const handleSearch = (e) =>{
+        setSearchQuery(e.target.value.toLowerCase());
+    }
+
+    const filterVehicales = vehicales.filter((vehicale)=>
+        vehicale.Vehicale_Type.toLowerCase().includes(searchQuery) ||
+        vehicale._id.toLowerCase().includes(searchQuery)
+    )
+
+
     //report genarate
     const ComponetsRef = useRef();
     const handlePrint = useReactToPrint({
@@ -43,11 +57,15 @@ function Vehicale(){
     return(
         <div>
             <Header/>
+            <Link to="/AddVehicale"><button className="btn-add"> Add New Vehicale </button></Link>
+            <button className="btn-pdf" onClick={handlePrint}>Downlod report in PDF</button>
             <h1 class="head1">Vehicles and Accessories</h1>
+            <input type="text" className="search" placeholder="Search vehicale by id or type" value={searchQuery} onChange={handleSearch}/>
             <div class="display" ref={ComponetsRef}>
-            {vehicales&& vehicales.map((vehicale,i)=>(
+            {filterVehicales && filterVehicales .map((vehicale,i)=>(
                   <div key={i} className="vehicle-item">
                   <h3>Type: {vehicale.Vehicale_Type}</h3>
+                  <p>Vehicale Number:{vehicale.Vehicale_Number}</p>
                   <p>System ID:{vehicale._id}</p>
                   <p>Received Date: {new Date(vehicale.RecivedDate).toLocaleDateString()}</p>
                   <p>Last Maintenance Date: {new Date(vehicale.LastMaintanceDate).toLocaleDateString()}</p>
@@ -58,8 +76,6 @@ function Vehicale(){
               </div>
             ))}
             </div>
-            <Link to="/AddVehicale"><button className="btn-add"> Add New Vehicale </button></Link>
-            <button className="btn-add" onClick={handlePrint}>Downlod report in PDF</button>
         </div>
     );
 }

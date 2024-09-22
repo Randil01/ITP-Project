@@ -34,8 +34,7 @@ app.use("/Vehicles",vehicleRouter);
 const assetsRouter = require("./routes/Assets/publicAssets.js")
 app.use("/publicAssets",assetsRouter);
 
-console.log('Routes set up');
-
 app.listen(PORT,()=>{
     console.log(`Server is running on port no:${PORT}`);
+    console.log('Routes set up');
 })

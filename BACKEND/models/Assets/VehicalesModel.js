@@ -4,6 +4,10 @@ const schema = mongoose.Schema;
 
 const VehicaleAssetsSchema = new schema({
     
+    Vehicale_Number:{
+        type : String,
+        required: true
+    },
     Vehicale_Type:{
         type : String,
         required: true

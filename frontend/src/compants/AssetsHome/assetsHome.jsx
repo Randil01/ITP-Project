@@ -11,8 +11,7 @@ function AsetsHome(){
             <a href="/home" className="logout">Log out</a>
 
             <Link to="/VehicaleAll"className="button">Vehicles and Accessories</Link>
-            <a href="/page2" className="button">Public Properties </a>
-            <a href="/page3" className="button">Add a finacial record</a>
+            <Link to="/pAssetsAll"className="button">Public Properties</Link> 
         </div>
         
     );

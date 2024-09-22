@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "./AddVehicale.css"
-import { Link } from "react-router-dom";
+import "./AddVehicale.css";
 
 function AddVehicale() {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
+    Vehicale_Number: "",
     Vehicale_Type: "",
     RecivedDate: "",
     LastMaintanceDate: "",
@@ -15,90 +15,139 @@ function AddVehicale() {
   });
 
   const [errors, setErrors] = useState({
+    Vehicale_Number: "",
     RecivedDate: "",
     LastMaintanceDate: "",
   });
 
+  const validateInputs = () => {
+    const currentDate = new Date().toISOString().split("T")[0];
+    let validationErrors = {};
+
+    const validNumberPattern = /^(?:[A-Z]{3}[0-9]{4}|[A-Z]{2}[0-9]{4})$/;
+    if (!validNumberPattern.test(inputs.Vehicale_Number)) {
+      validationErrors.Vehicale_Number = "Vehicle vehicale number again";
+    } else {
+      validationErrors.Vehicale_Number = "";
+    }
+
+    if (inputs.RecivedDate > currentDate) {
+      validationErrors.RecivedDate = "Date cannot be in the future.";
+    } else {
+      validationErrors.RecivedDate = "";
+    }
+
+    if (inputs.LastMaintanceDate > currentDate) {
+      validationErrors.LastMaintanceDate = "Date cannot be in the future.";
+    } else {
+      validationErrors.LastMaintanceDate = "";
+    }
+
+    return validationErrors;
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Current date in YYYY-MM-DD format
-    const currentDate = new Date().toISOString().split("T")[0];
-
     setInputs((prevState) => ({
       ...prevState,
       [name]: value,
     }));
 
-    // Validate the date fields to ensure they are not future dates
-    if (
-      (name === "RecivedDate" || name === "LastMaintanceDate") &&
-      value > currentDate
-    ) {
-      setErrors((prevState) => ({
-        ...prevState,
-        [name]: "Date cannot be in the future.",
-      }));
-    } else {
-      setErrors((prevState) => ({
-        ...prevState,
-        [name]: "",
-      }));
-    }
+    const validationErrors = validateInputs();
+    setErrors(validationErrors);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const validationErrors = validateInputs();
+    setErrors(validationErrors);
   
-    // Check for any errors before allowing submission
-    if (errors.RecivedDate || errors.LastMaintanceDate) {
-      alert("Please correct the dates before submitting.");
+    if(Object.values(validationErrors).some((error)=>error)){
+      alert("please correct erros before submiting");
       return;
     }
-  
-    // Check if any of the date fields are still in the future
-    const currentDate = new Date().toISOString().split("T")[0];
-    if (inputs.RecivedDate > currentDate || inputs.LastMaintanceDate > currentDate) {
-      alert("Dates cannot be in the future. Please correct the dates.");
-      return;
-    }
-  
-    // If no errors, proceed to submit the form
-    sendRequest().then(() => history("/vehicaleall"));
+
+    await sendRequest();
+    history("/vehicaleall");
   };
-  
 
   const sendRequest = async () => {
     await axios.post("http://localhost:8070/vehicles/add", {
-        Vehicale_Type: inputs.Vehicale_Type,
-        RecivedDate: inputs.RecivedDate,
-        LastMaintanceDate: inputs.LastMaintanceDate,
-        ReserveStatues: inputs.ReserveStatues,
-        Descrption: inputs.Descrption,
-      }).then((res) => res.data);
+      Vehicale_Number: inputs.Vehicale_Number,
+      Vehicale_Type: inputs.Vehicale_Type,
+      RecivedDate: inputs.RecivedDate,
+      LastMaintanceDate: inputs.LastMaintanceDate,
+      ReserveStatues: inputs.ReserveStatues,
+      Descrption: inputs.Descrption,
+    });
   };
 
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div>
+          <label htmlFor="Vehicale_Number">Vehicle Number:</label>
+          <input
+            type="text"
+            placeholder="Enter vehicle number (Use Capital letters)"
+            className="Vehicale_Number"
+            name="Vehicale_Number"
+            onChange={handleChange}
+            value={inputs.Vehicale_Number}
+            required
+          />
+          {errors.Vehicale_Number && <span className="error">{errors.Vehicale_Number}</span>}
+        </div>
+
+        <div>
           <label htmlFor="Vehicale_Type">Vehicle Type:</label>
-          <input type="text" placeholder="Enter vehicale number along with brand"className="Vehicale_Type" name="Vehicale_Type" onChange={handleChange} value={inputs.Vehicale_Type} required/>
+          <input
+            type="text"
+            placeholder="Enter vehicle brand with type"
+            className="Vehicale_Type"
+            name="Vehicale_Type"
+            onChange={handleChange}
+            value={inputs.Vehicale_Type}
+            required
+          />
         </div>
 
         <div>
           <label htmlFor="RecivedDate">Received Date:</label>
-          <input type="date" className="RecivedDate" name="RecivedDate" onChange={handleChange} value={inputs.RecivedDate} required/>
+          <input
+            type="date"
+            className="RecivedDate"
+            name="RecivedDate"
+            onChange={handleChange}
+            value={inputs.RecivedDate}
+            required
+          />
+          {errors.RecivedDate && <span className="error">{errors.RecivedDate}</span>}
         </div>
 
         <div>
           <label htmlFor="LastMaintanceDate">Last Maintenance Date:</label>
-          <input type="date" className="LastMaintanceDate" name="LastMaintanceDate" onChange={handleChange} value={inputs.LastMaintanceDate} required/>
+          <input
+            type="date"
+            className="LastMaintanceDate"
+            name="LastMaintanceDate"
+            onChange={handleChange}
+            value={inputs.LastMaintanceDate}
+            required
+          />
+          {errors.LastMaintanceDate && <span className="error">{errors.LastMaintanceDate}</span>}
         </div>
 
         <div>
           <label htmlFor="ReserveStatues">Reserve Status:</label>
-          <select className="ReserveStatues" name="ReserveStatues" onChange={handleChange} value={inputs.ReserveStatues} required>
+          <select
+            className="ReserveStatues"
+            name="ReserveStatues"
+            onChange={handleChange}
+            value={inputs.ReserveStatues}
+            required
+          >
             <option value="">Select Status</option>
             <option value="Reserved">Reserved</option>
             <option value="Available">Available</option>
@@ -108,13 +157,21 @@ function AddVehicale() {
 
         <div>
           <label htmlFor="Descrption">Description:</label>
-          <textarea className="Descrption" placeholder="Enter any other specifiaction of vehicale"name="Descrption" onChange={handleChange} value={inputs.Descrption} required></textarea>
+          <textarea
+            className="Descrption"
+            placeholder="Enter any other specifications of vehicle"
+            name="Descrption"
+            onChange={handleChange}
+            value={inputs.Descrption}
+            required
+          ></textarea>
         </div>
+
         <div className="button-container">
-        <button type="submit">Submit</button>
-        <Link to="/VehicaleAll">
-          <button type="button" className="back">✖ Close</button>
-        </Link>
+          <button type="submit">Submit</button>
+          <Link to="/VehicaleAll">
+            <button type="button" className="back">✖ Close</button>
+          </Link>
         </div>
       </form>
     </div>
