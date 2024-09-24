@@ -5,6 +5,7 @@ import "./VehicaleAll.css"
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {useReactToPrint} from 'react-to-print'
+import logo2 from '../../images/panadura_mn.png';
 
 const URL = "http://localhost:8070/publicAssets/displayAssets"
 
@@ -58,7 +59,7 @@ function PublicAssetsAll(){
             <button className="btn-pdf" onClick={handlePrint}>Downlod report in PDF</button>
             <h1 class="head1">Public assets and Others</h1>
             <input type="text" className="search" placeholder="Search assets by id or type" value={searchQuery} onChange={handleSearch}/>
-            <div class="display" ref={ComponetsRef}>
+            <div class="display">
             {filterAssets&& filterAssets.map((Assets,i)=>(
                   <div key={i} className="vehicle-item">
                   <h3>Type: {Assets.Assets_Type}</h3>
@@ -72,6 +73,46 @@ function PublicAssetsAll(){
                   <button className="btn-delete" onClick={()=> deleteHandler(Assets._id)}>Delete</button>
               </div>
             ))}
+            </div>
+            <div className="printonly" ref={ComponetsRef}>
+                <div className="print-header">
+                    <img src={logo2} alt="Company logo" className="company-logo" />
+                    <div className="header-text">
+                        <h1>Panadura Municipal Council</h1>
+                        <h3>Assets Report</h3>
+                        <p>Generated on {new Date().toLocaleDateString()}</p>
+                    </div>
+                </div>
+                <hr />
+                <table className="vehicle-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Received Date</th>
+                            <th>Reserve Status</th>
+                            <th>Reseved Till</th>
+                            <th>Maintance Cost</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filterAssets && filterAssets.map((Assets, i) => (
+                            <tr key={i} className="vehicle-row">
+                                <td>{Assets.Assets_Type}</td>
+                                <td>{new Date(Assets.RecivedDate).toLocaleDateString()}</td>
+                                <td>{Assets.ReserveStatues}</td>
+                                <td>{new Date(Assets.RecivaedTimePeriod).toLocaleDateString()}</td>
+                                <td>{Assets.maintanceCost}</td>
+                                <td>{Assets.Description}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <div className="page-footer">
+                    <hr />
+                    <p>Date: {new Date().toLocaleDateString()}</p>
+                    <p>Signature: ____________________</p>
+                </div>
             </div>
         </div>
     );

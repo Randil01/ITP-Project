@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -34,13 +33,13 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease; 
     z-index: 1;
-  }
-  
-  .search:focus {
-    border-color: #df2b0b; /* Highlight border when input is focused */
+}
+
+.search:focus {
+    border-color: #df2b0b; 
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Shadow effect on focus */
-  }
-  
+}
+
 /* Individual vehicle details container */
 .vehicle-item {
     background-color: #fff;
@@ -79,8 +78,8 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.btn-add{
-    background-color:#f46157;
+.btn-add {
+    background-color: #f46157;
     display: block;
     padding: 10px 20px;
     margin-top: 50px;
@@ -94,8 +93,8 @@ body {
     width: fit-content;
 }
 
-.btn-pdf{
-    background-color:#f46157;
+.btn-pdf {
+    background-color: #f46157;
     display: block;
     padding: 10px 20px;
     margin-top: -40px;
@@ -111,8 +110,7 @@ body {
 
 /* Update button specific styles */
 .btn-update {
-    background-color: #4CAF50; /* Green */
-    color: white;
+    background-color: #4CAF50;
     border: none;
 }
 
@@ -121,8 +119,7 @@ body {
 }
 
 .btn-delete {
-    background-color: #f44336; /* Red */
-    color: white;
+    background-color: #f44336; 
     border: none;
 }
 
@@ -135,3 +132,112 @@ body {
         width: 90%;
     }
 }
+
+.printonly {
+    display: none; 
+}
+
+/* PDF */
+@media print {
+    
+    .printonly {
+        display: none; 
+    }
+    
+    .display {
+        display: none; 
+    }
+
+    .printonly {
+        display: block; 
+    }
+
+    /* Print header */
+    .print-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center; 
+        margin: 0;
+        padding: 20px 0; 
+        z-index: 10;
+        background-color: white; 
+    }
+    
+    .company-logo {
+        margin: 0 auto; 
+        display: block; 
+    }
+    
+    .header-text {
+        display: inline-block; 
+        vertical-align: middle; 
+        text-align: center; 
+    }
+   
+    .header-text h1, .header-text h3 {
+        margin: 0; 
+    }
+
+   
+    .header-text h1 {
+        margin-bottom: 5px; 
+    }
+
+    body {
+        padding-top: 250px; 
+    }
+
+    
+    .vehicle-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 50px 0; 
+    }
+
+    .vehicle-table th, .vehicle-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .vehicle-table th {
+        background-color: #4CAF50; 
+        color: white; 
+    }
+
+    .vehicle-table tr:nth-child(even) {
+        background-color: #f9f9f9; 
+    }
+
+    .vehicle-table tr:hover {
+        background-color: #f1f1f1; 
+    }
+
+    /* Printable footer */
+    .page-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: left;
+        padding: 10px;
+        background-color: #fff; 
+        z-index: 10; 
+    }
+
+    .vehicle-item {
+        page-break-inside: avoid;
+    }
+
+    .printonly .header-text {
+        margin-bottom: 40px; 
+    }
+
+    .print-header {
+        page-break-after: avoid;
+    }
+}
+
+

@@ -20,6 +20,16 @@ function UpdateVehicale() {
             try {
                 const response = await axios.get(`http://localhost:8070/vehicles/displayVehione/${id}`);
                 setInputs(response.data);
+                const date = response.data;
+
+                const formattedRecivedDate = new Date(date.RecivedDate).toISOString().split("T")[0];
+                const formattedLastMaintanceDate = new Date(date.LastMaintanceDate).toISOString().split("T")[0];
+
+                setInputs({
+                    ...date,
+                    RecivedDate: formattedRecivedDate,
+                    LastMaintanceDate: formattedLastMaintanceDate
+                });
             } catch (error) {
                 console.error("Error fetching vehicle data:", error);
             }
@@ -88,7 +98,7 @@ function UpdateVehicale() {
                         className="Vehicale_Number"
                         name="Vehicale_Number"
                         onChange={handleChange}
-                        value={inputs.Vehicale_Number || ''}
+                        value={inputs.Vehicale_Number}
                         required
                     />
                     {errors.Vehicale_Number && <span className="error">{errors.Vehicale_Number}</span>}
@@ -102,7 +112,7 @@ function UpdateVehicale() {
                         className="Vehicale_Type"
                         name="Vehicale_Type"
                         onChange={handleChange}
-                        value={inputs.Vehicale_Type || ''}
+                        value={inputs.Vehicale_Type}
                         required
                     />
                 </div>
@@ -114,7 +124,7 @@ function UpdateVehicale() {
                         className="RecivedDate"
                         name="RecivedDate"
                         onChange={handleChange}
-                        value={inputs.RecivedDate || ''}
+                        value={inputs.RecivedDate}
                         required
                     />
                     {errors.RecivedDate && <span className="error">{errors.RecivedDate}</span>}
@@ -127,7 +137,7 @@ function UpdateVehicale() {
                         className="LastMaintanceDate"
                         name="LastMaintanceDate"
                         onChange={handleChange}
-                        value={inputs.LastMaintanceDate || ''}
+                        value={inputs.LastMaintanceDate}
                         required
                     />
                     {errors.LastMaintanceDate && <span className="error">{errors.LastMaintanceDate}</span>}
@@ -139,7 +149,7 @@ function UpdateVehicale() {
                         className="ReserveStatues"
                         name="ReserveStatues"
                         onChange={handleChange}
-                        value={inputs.ReserveStatues || ''}
+                        value={inputs.ReserveStatues}
                         required
                     >
                         <option value="">Select Status</option>
@@ -156,7 +166,7 @@ function UpdateVehicale() {
                         placeholder="Enter any other specifications of vehicle"
                         name="Descrption"
                         onChange={handleChange}
-                        value={inputs.Descrption || ''}
+                        value={inputs.Descrption}
                         required
                     ></textarea>
                 </div>
