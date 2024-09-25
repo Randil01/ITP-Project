@@ -22,23 +22,21 @@ function Header() {
                 <ul className="nav">
                     <li><a href="#" className="nav-link">Home</a></li>
                     <li className="nav-item">
-                        <button className="nav-button">Administration & Controlling</button>
+                        <button className="nav-buttonhead">Administration & Controlling</button>
                         <div className="button-menu">
-                            <button className="button-item">Employee Supervision</button>
-                            <Link to="/assetsHome" className="button-item">
-                                Assets Controlling
-                            </Link>
+                            <Link to ="/employee" button className="button-item">Employee Supervision</Link>
+                            <Link to="/assetsHome" className="button-item">Assets Controlling</Link>
                             <button className="button-item">Permits & Licenses</button>
                         </div>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-button">Health</button>
+                        <button className="nav-buttonhead">Health</button>
                         <div className="button-menu">
                             <button className="button-item">Healthcare & Social</button>
                         </div>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-button">City Monitoring</button>
+                        <button className="nav-buttonhead">City Monitoring</button>
                         <div className="button-menu">
                             <button className="button-item">Street Controlling</button>
                             <button className="button-item">Waste Management</button>

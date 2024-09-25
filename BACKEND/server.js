@@ -34,6 +34,14 @@ app.use("/Vehicles",vehicleRouter);
 const assetsRouter = require("./routes/Assets/publicAssets.js")
 app.use("/publicAssets",assetsRouter);
 
+
+//duvini
+const employeeRouter = require("./routes/Employee.js");
+app.use("/employee",employeeRouter);
+
+const salaryRouter = require("./routes/Salary.js");
+app.use("/salary",salaryRouter);
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port no:${PORT}`);
     console.log('Routes set up');

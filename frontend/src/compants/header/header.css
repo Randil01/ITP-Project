@@ -50,22 +50,23 @@
     position: relative; /* Required for button menu positioning */
 }
 
-.nav-button {
-    background: none;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 15px;
-    cursor: pointer;
-    display: inline-block;
+.nav-buttonhead{
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding for button size */
+    font-size: 15px; /* Font size */
+    cursor: pointer; /* Show pointer on hover */
     text-align: center;
+    outline: none; /* Remove the blue outline */
+    transition: background-color 0.3s ease; 
 }
 
 .button-menu {
     display: none; /* Hide the button menu by default */
     position: absolute;
     background-color: white;
-    color: black;
+    color: rgb(8, 233, 46);
     top: 100%;
     left: 0;
     padding: 10px 0;
@@ -75,7 +76,7 @@
 }
 
 .nav-item:hover .button-menu {
-    display: block; /* Show the button menu on hover */
+    display: block; 
 }
 
 .button-item {

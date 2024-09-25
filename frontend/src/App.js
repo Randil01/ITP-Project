@@ -8,6 +8,10 @@ import UpdateVehicale from "./compants/AssetsHome/UpdateVehicale";
 import PAssetsAll from "./compants/AssetsHome/publicAssetsAll";
 import AddAssets from "./compants/AssetsHome/AddAssets";
 import UpdateAssets from "./compants/AssetsHome/UpdateAssets";
+import AddEmployee from "./compants/employee/AddEmployee"
+import ManageEmployee from "./compants/employee/ManageEmployee"
+import ManageSalary from "./compants/employee/ManageSalary"
+import DisplayDetails from "./compants/employee/DisplayDetails"
 
 
 function App() {
@@ -23,6 +27,12 @@ function App() {
           <Route path="/pAssetsAll" element={<PAssetsAll/>}/>
           <Route path="/addAssets" element={<AddAssets/>}/>
           <Route path="/updateAssets/:id" element={<UpdateAssets/>}/>
+          
+          //duvini
+          <Route path="/employee" element={<DisplayDetails />} />
+          <Route path="/addEmployee" element={<AddEmployee />} />
+          <Route path="/manageEmployee" element={<ManageEmployee />} />
+          <Route path="/manageSalary" element={<ManageSalary />} />
         </Routes>
       </React.Fragment>
     </div>

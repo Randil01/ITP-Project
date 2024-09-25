@@ -12,8 +12,9 @@ body::before {
 }
 
 
-.form-container {
+.form {
     position: absolute; 
+    margin-top: 40px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -27,10 +28,10 @@ body::before {
 }
 
 /* Styling for form elements */
-.form-container input[type="text"],
-.form-container input[type="date"],
-.form-container select,
-.form-container textarea {
+.form input[type="text"],
+.form input[type="date"],
+.form select,
+.form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -48,7 +49,7 @@ body::before {
 }
 
 /* Submit button styling */
-.form-container button {
+.form button {
     padding: 8px 16px; 
     background-color: #4CAF50;
     color: white;
@@ -59,7 +60,7 @@ body::before {
     transition: background-color 0.3s; 
 }
 
-.form-container button:hover {
+.form button:hover {
     background-color: #45a049;
 }
 
@@ -88,7 +89,7 @@ body::before {
 
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
-    .form-container {
+    .form{
         width: 90%; 
         padding: 20px;
     }

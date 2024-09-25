@@ -106,7 +106,7 @@ function AddAsset() {
   };
 
   return (
-    <div className="form-container">
+    <div className="form">
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="Assets_Type">Assets Type:</label>
