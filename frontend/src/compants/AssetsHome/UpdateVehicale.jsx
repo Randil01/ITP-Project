@@ -18,7 +18,7 @@ function UpdateVehicale() {
     useEffect(() => {
         const fetchHandler = async () => {
             try {
-                const response = await axios.get(`http://localhost:8070/vehicles/displayVehione/${id}`);
+                const response = await axios.get(`http://localhost:5000/vehicles/displayVehione/${id}`);
                 setInputs(response.data);
                 const date = response.data;
 
@@ -58,7 +58,7 @@ function UpdateVehicale() {
     };
 
     const sendRequest = async () => {
-        await axios.put(`http://localhost:8070/vehicles/updateVehi/${id}`, inputs);
+        await axios.put(`http://localhost:5000/vehicles/updateVehi/${id}`, inputs);
     };
 
     const handleChange = (e) => {

@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Header from '../header';
+import Header from '../header/header';
 import axios from "axios";
 import "./VehicaleAll.css";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
-import logo2 from '../../images/panadura_mn.png';
+import logo2 from '../header/images/panadura_mn.png';
 
-const URL = "http://localhost:8070/vehicles/displayVehi";
+const URL = "http://localhost:5000/vehicles/displayVehi";
 
 const fetchHandler = async () => {
     return await axios.get(URL).then((res) => res.data);
@@ -25,7 +25,7 @@ function Vehicale() {
 
     const deleteHandler = async (id) => {
         try {
-            await axios.delete(`http://localhost:8070/vehicles/deleteVehi/${id}`);
+            await axios.delete(`http://localhost:5000/vehicles/deleteVehi/${id}`);
             alert("Vehicle successfully removed from inventory");
             setVehicales(vehicales.filter((vehicale) => vehicale._id !== id));
         } catch (error) {

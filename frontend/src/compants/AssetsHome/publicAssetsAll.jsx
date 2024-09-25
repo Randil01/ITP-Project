@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef} from 'react';
-import Header from '../header';
+import Header from '../header/header';
 import axios from "axios";
 import "./VehicaleAll.css"
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import {useReactToPrint} from 'react-to-print'
-import logo2 from '../../images/panadura_mn.png';
+import logo2 from '../header/images/panadura_mn.png';
 
-const URL = "http://localhost:8070/publicAssets/displayAssets"
+const URL = "http://localhost:5000/publicAssets/displayAssets"
 
 const fetchHandler = async() =>{
     return await axios.get(URL).then((res) => res.data)
@@ -27,7 +27,7 @@ function PublicAssetsAll(){
 
     const deleteHandler = async (id) => {
         try {
-            await axios.delete(`http://localhost:8070/publicAssets/deleteAssets/${id}`);
+            await axios.delete(`http://localhost:5000/publicAssets/deleteAssets/${id}`);
             alert("Vehicale sucessfully removed from inventory");
             // Remove the deleted vehicle from the state
             setAssets(assets.filter((Assets) => Assets._id !== id));

@@ -94,7 +94,7 @@ function AddAsset() {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:8070/publicAssets/addAssets", {
+      .post("http://localhost:5000/publicAssets/addAssets", {
         Assets_Type: inputs.Assets_Type,
         RecivedDate: inputs.RecivedDate,
         ReserveStatues: inputs.ReserveStatues,

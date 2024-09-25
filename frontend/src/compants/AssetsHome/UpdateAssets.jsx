@@ -12,7 +12,7 @@ function UpdateAssets() {
     const fetchHandler = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8070/publicAssets/displayAssetsone/${id}`
+          `http://localhost:5000/publicAssets/displayAssetsone/${id}`
         );
         console.log("Fetched Data:", response.data);
         setInputs(response.data); // Set inputs directly from the fetched vehicle data
@@ -35,7 +35,7 @@ function UpdateAssets() {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8070/publicAssets/updateAssets/${id}`, {
+      .put(`http://localhost:5000/publicAssets/updateAssets/${id}`, {
         Assets_Type: inputs.Assets_Type,
         RecivedDate: inputs.RecivedDate,
         ReserveStatues: inputs.ReserveStatues,

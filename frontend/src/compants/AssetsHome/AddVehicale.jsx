@@ -73,7 +73,7 @@ function AddVehicale() {
   };
 
   const sendRequest = async () => {
-    await axios.post("http://localhost:8070/vehicles/add", {
+    await axios.post("http://localhost:5000/vehicles/add", {
       Vehicale_Number: inputs.Vehicale_Number,
       Vehicale_Type: inputs.Vehicale_Type,
       RecivedDate: inputs.RecivedDate,
