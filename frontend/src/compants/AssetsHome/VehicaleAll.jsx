@@ -106,7 +106,6 @@ function Vehicale() {
                     </tbody>
                 </table>
                 <div className="page-footer">
-                    <hr />
                     <p>Date: {new Date().toLocaleDateString()}</p>
                     <p>Signature: ____________________</p>
                 </div>
