@@ -81,18 +81,18 @@ const DisplayDetails = () => {
       startY: 80,
 
       headStyles: {
-        fillColor: [16, 196, 43],  // Green color for the header background (RGB for green)
-        textColor: [255, 255, 255], // White text color for the header
-        lineWidth: 0.1, // Thicker borders for the table
-        lineColor: [0, 0, 0],  // Black border color
+        fillColor: [16, 196, 43],  
+        textColor: [255, 255, 255], 
+        lineWidth: 0.1, 
+        lineColor: [0, 0, 0],  
       },
       styles: {
-        lineWidth: 0.1, // Thicker borders for the table
-        lineColor: [0, 0, 0],  // Black border color
+        lineWidth: 0.1, 
+        lineColor: [0, 0, 0],  
       },
       bodyStyles: {
-        lineWidth: 0.1, // Thicker borders for the table body
-        lineColor: [0, 0, 0],  // Black border color
+        lineWidth: 0.1, 
+        lineColor: [0, 0, 0],  // 
       },
       margin: { top: 10 },
       styles: { halign: 'center' }, // Center align text inside table cells
