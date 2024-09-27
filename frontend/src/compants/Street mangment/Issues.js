@@ -102,7 +102,7 @@ function Issues() {
             </button>
 
             <div className="container">
-            <input type="text" className="search" placeholder="search by area" value={searchQuary} onChange={handleSerch}/>
+            <input type="text" className="search-issue" placeholder="search by area" value={searchQuary} onChange={handleSerch}/>
                 {issues.length === 0 ? (
                     <p>No issues reported yet.</p>
                 ) : (
