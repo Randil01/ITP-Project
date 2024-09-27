@@ -42,6 +42,10 @@ app.use("/employee",employeeRouter);
 const salaryRouter = require("./routes/Salary.js");
 app.use("/salary",salaryRouter);
 
+//vishwa
+const postRoutes = require('./routes/route');
+app.use(postRoutes);
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port no:${PORT}`);
     console.log('Routes set up');

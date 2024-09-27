@@ -38,7 +38,7 @@ function Header() {
                     <li className="nav-item">
                         <button className="nav-buttonhead">City Monitoring</button>
                         <div className="button-menu">
-                            <button className="button-item">Street Controlling</button>
+                            <Link to="/street" button className="button-item">Street Controlling</Link>
                             <button className="button-item">Waste Management</button>
                             <button className="button-item">Contact Us</button>
                         </div>
