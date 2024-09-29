@@ -93,7 +93,7 @@
     background-color: #f1f1f1; /* Add a hover effect for button items */
 }
 
-.council-name {
+.council-name-head{
     text-align: center;
     color: #4CAF50;
     margin-top: 30px; /* Reduced top margin */
@@ -101,14 +101,16 @@
     margin-left: 950px;
 }
 
-.council-name h2 {
+.council-name-head h2 {
     margin: 0;
     font-size: 35px;
+    color: #4CAF50;
 }
 
-.council-name h3 {
+.council-name-head h3 {
     margin: 0;
     font-size: 25px;
+    color: #4CAF50;
 }
 
 .divider {

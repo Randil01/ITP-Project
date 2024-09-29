@@ -134,14 +134,14 @@ body {
     }
 }
 
-.printonly {
+.printonly-assets{
     display: none; 
 }
 
 /* PDF */
 @media print {
     
-    .printonly {
+    .printonly-assets{
         display: none; 
     }
     
@@ -149,12 +149,12 @@ body {
         display: none; 
     }
 
-    .printonly {
+    .printonly-assets{
         display: block; 
     }
 
     /* Print header */
-    .print-header {
+    .print-header-assets{
         position: fixed;
         top: 0;
         left: 0;
@@ -166,23 +166,23 @@ body {
         background-color: white; 
     }
     
-    .company-logo {
+    .company-logo-assets{
         margin: 0 auto; 
         display: block; 
     }
     
-    .header-text {
+    .header-text-assets{
         display: inline-block; 
         vertical-align: middle; 
         text-align: center; 
     }
    
-    .header-text h1, .header-text h3 {
+    .header-text-assets h1, .header-text-assets h3 {
         margin: 0; 
     }
 
    
-    .header-text h1 {
+    .header-text-assets h1 {
         margin-bottom: 5px; 
     }
 
@@ -191,28 +191,29 @@ body {
     }
 
     
-    .vehicle-table {
+    .vehicle-table-assets {
         width: 100%;
         border-collapse: collapse;
-        margin: 50px 0; 
+        margin: 50px 0;
+        margin-top: 350px;
     }
 
-    .vehicle-table th, .vehicle-table td {
+    .vehicle-table th, .vehicle-table-assets td {
         border: 1px solid #ddd;
         padding: 10px;
         text-align: left;
     }
 
-    .vehicle-table th {
+    .vehicle-table-assets th {
         background-color: #4CAF50; 
         color: white; 
     }
 
-    .vehicle-table tr:nth-child(even) {
+    .vehicle-table-assets tr:nth-child(even) {
         background-color: #f9f9f9; 
     }
 
-    .vehicle-table tr:hover {
+    .vehicle-table-assets tr:hover {
         background-color: #f1f1f1; 
     }
 
@@ -243,5 +244,3 @@ body {
         page-break-after: avoid;
     }
 }
-
-

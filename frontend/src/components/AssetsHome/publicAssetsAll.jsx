@@ -74,17 +74,17 @@ function PublicAssetsAll(){
               </div>
             ))}
             </div>
-            <div className="printonly" ref={ComponetsRef}>
-                <div className="print-header">
-                    <img src={logo2} alt="Company logo" className="company-logo" />
-                    <div className="header-text">
+            <div className="printonly-assets" ref={ComponetsRef}>
+                <div className="print-header-assets">
+                    <img src={logo2} alt="Company logo" className="company-logo-assets" />
+                    <div className="header-text-assets">
                         <h1>Panadura Municipal Council</h1>
                         <h3>Assets Report</h3>
                         <p>Generated on {new Date().toLocaleDateString()}</p>
                     </div>
                 </div>
                 <hr />
-                <table className="vehicle-table">
+                <table className="vehicle-table-assets">
                     <thead>
                         <tr>
                             <th>Type</th>

@@ -52,7 +52,7 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-            <div className="council-name">
+            <div className="council-name-head">
                 <h2>PANADURA</h2>
                 <h3>MUNICIPAL COUNCIL</h3>
             </div>
