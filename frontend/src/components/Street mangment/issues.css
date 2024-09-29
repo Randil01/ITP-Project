@@ -1,0 +1,98 @@
+/* Container for the list of issues */
+.container {
+    max-width: 800px;
+    max-height: auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card for each issue */
+.issue-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 35px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.issue-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #369139;
+    font-weight: 700;
+}
+
+.issue-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Button to view details */
+.btn-view-details {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    width: 200px;
+    margin-left: 120px;
+}
+
+.btn-view-details:hover {
+    background-color: #45a049;
+}
+
+.btn-download-report{
+    margin-left: 240px;
+    background-color: #45a049;
+    color: #ffffff;
+    width: 250px;
+}
+.search-issue{
+    top: 20px;
+    right: 20px; 
+    width: 250px; 
+    padding: 10px 15px; 
+    margin-left: 0px;
+    border-radius: 25px;
+    border: 1px solid #0def1c; 
+    outline: none; 
+    font-size: 16px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+    z-index: 1;
+}
+
+.btn-btn-primary{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: -360px;
+}
+
+.btn-btn-secondary{
+    width: 300px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .issue-card {
+        padding: 10px;
+    }
+
+    .btn-view-details {
+        width: 100%;
+        text-align: center;
+    }
+}

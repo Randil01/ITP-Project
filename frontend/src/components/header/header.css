@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure the header takes full width */
+}
+
+.green-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 10px 0; /* Adjusted padding to make it more compact */
+    width: 100%;
+    height: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    margin-right: 30px;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    z-index: 2; /* Ensure the nav stays above the content */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.nav-item {
+    position: relative; /* Required for button menu positioning */
+}
+
+.nav-buttonhead{
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    color: white; /* Set text color */
+    padding: 10px 20px; /* Add padding for button size */
+    font-size: 15px; /* Font size */
+    cursor: pointer; /* Show pointer on hover */
+    text-align: center;
+    outline: none; /* Remove the blue outline */
+    transition: background-color 0.3s ease; 
+}
+
+.button-menu {
+    display: none; /* Hide the button menu by default */
+    position: absolute;
+    background-color: white;
+    color: rgb(8, 233, 46);
+    top: 100%;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 3; /* Ensure button menu appears above other elements */
+    width: 200px; /* Adjust width as needed */
+}
+
+.nav-item:hover .button-menu {
+    display: block; 
+}
+
+.button-item {
+    background: none;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.button-item:hover {
+    background-color: #f1f1f1; /* Add a hover effect for button items */
+}
+
+.council-name {
+    text-align: center;
+    color: #4CAF50;
+    margin-top: 30px; /* Reduced top margin */
+    font-weight: bold;
+    margin-left: 950px;
+}
+
+.council-name h2 {
+    margin: 0;
+    font-size: 35px;
+}
+
+.council-name h3 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.divider {
+    border: 0;
+    height: 5px;
+    background: #9f9e9e; /* Light grey color for the line */
+    width: 100%;
+    margin-top: 10px; /* Reduced margin to bring it closer to the content */
+}
