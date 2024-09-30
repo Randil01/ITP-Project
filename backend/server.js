@@ -52,6 +52,9 @@ app.use("/salary", salaryRouter);
 const postRoutes = require('./routes/route');
 app.use(postRoutes);
 
+//vanuja
+const itemRoutes = require("./routes/itemroutes");
+app.use("/", itemRoutes);
 
 // Start server
 app.listen(PORT, () => {

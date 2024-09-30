@@ -14,8 +14,6 @@ app.use(
 app.use(express.json());
 
 
-
-
 app.get('/feedbacks', (req,res) => {
     //get all Emps from controller
     controller.getFeedback((req,res,next) => {

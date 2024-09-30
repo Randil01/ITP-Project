@@ -1,21 +1,21 @@
-.header {
+.hdr-wrapper-uniqueee {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure the header takes full width */
+    width: 100%;
 }
 
-.green-bar {
+.bar-green-uniqueee {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #4CAF50;
-    padding: 10px 0; /* Adjusted padding to make it more compact */
+    padding: 10px 0;
     width: 100%;
-    height: 40px;
+    height: 50px;
 }
 
-.logo-container {
+.logo-container-uniqueee {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -23,63 +23,67 @@
     padding-left: 20px;
 }
 
-.logo {
+.logo-uniqueee {
     height: 100px;
     width: auto;
     margin-right: 30px;
 }
 
-.nav {
+.nav-uniqueee {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     font-size: 15px;
-    z-index: 2; /* Ensure the nav stays above the content */
+    z-index: 2;
 }
 
-.nav-link {
+.nav-link-uniqueee {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     display: block;
+    align-items: center;
+    margin-top: 15px;
 }
 
-.nav-item {
-    position: relative; /* Required for button menu positioning */
+.nav-item-uniqueee {
+    position: relative;
 }
 
-.nav-buttonhead{
-    background: none; /* Remove default background */
-    border: none; /* Remove default border */
-    color: white; /* Set text color */
-    padding: 10px 20px; /* Add padding for button size */
-    font-size: 15px; /* Font size */
-    cursor: pointer; /* Show pointer on hover */
+.nav-buttonhead-uniqueee {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
     text-align: center;
-    outline: none; /* Remove the blue outline */
-    transition: background-color 0.3s ease; 
+    outline: none;
+    align-items: center;
 }
 
-.button-menu {
-    display: none; /* Hide the button menu by default */
+.button-menu-uniqueee {
+    display: none;
     position: absolute;
-    background-color: white;
-    color: rgb(8, 233, 46);
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     top: 100%;
     left: 0;
     padding: 10px 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 3; /* Ensure button menu appears above other elements */
-    width: 200px; /* Adjust width as needed */
+    z-index: 3;
+    width: 200px;
+    border: 2px solid #4CAF50; 
+    border-radius: 10px; 
 }
 
-.nav-item:hover .button-menu {
-    display: block; 
+.nav-item-uniqueee:hover .button-menu-uniqueee {
+    display: block;
 }
 
-.button-item {
+.button-item-uniqueee {
     background: none;
     border: none;
     color: black;
@@ -89,34 +93,34 @@
     cursor: pointer;
 }
 
-.button-item:hover {
-    background-color: #f1f1f1; /* Add a hover effect for button items */
+.button-item-uniqueee:hover {
+    background-color: #f1f1f1;
 }
 
-.council-name-head{
+.council-head-uniqueee {
     text-align: center;
     color: #4CAF50;
-    margin-top: 30px; /* Reduced top margin */
+    margin-top: 30px;
     font-weight: bold;
     margin-left: 950px;
 }
 
-.council-name-head h2 {
+.council-head-uniqueee h2 {
     margin: 0;
     font-size: 35px;
     color: #4CAF50;
 }
 
-.council-name-head h3 {
+.council-head-uniqueee h3 {
     margin: 0;
     font-size: 25px;
     color: #4CAF50;
 }
 
-.divider {
+.divider-uniqueee {
     border: 0;
     height: 5px;
-    background: #9f9e9e; /* Light grey color for the line */
+    background: #9f9e9e;
     width: 100%;
-    margin-top: 10px; /* Reduced margin to bring it closer to the content */
+    margin-top: 10px;
 }

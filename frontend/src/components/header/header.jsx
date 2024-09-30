@@ -5,63 +5,54 @@ import './header.css';
 import { Link } from 'react-router-dom';
 
 function Header() {
-    const [activeDropdown, setActiveDropdown] = useState(null);
-
-    const handleMouseEnter = (dropdownName) => {
-        setActiveDropdown(dropdownName);
-    };
-
-    const handleMouseLeave = () => {
-        setActiveDropdown(null);
-    };
-
+    
     return (
-        <header className="header">
-        <div className="green-bar">
+        <header className="hdr-wrapper-uniqueee">
+        <div className="bar-green-uniqueee">
             <nav>
-                <ul className="nav">
-                    <li><a href="#" className="nav-link">Home</a></li>
-                    <li className="nav-item">
-                        <button className="nav-buttonhead">Administration & Controlling</button>
-                        <div className="button-menu">
-                            <Link to ="/employee" button className="button-item">Employee Supervision</Link>
-                            <Link to="/assetsHome" className="button-item">Assets Controlling</Link>
-                            <button className="button-item">Permits & Licenses</button>
+                <ul className="nav-uniqueee">
+                    <li><a href="#" className="nav-link-uniqueee">Home</a></li>
+                    <li className="nav-item-uniqueee">
+                        <button className="nav-buttonhead-uniqueee">Administration & Controlling</button>
+                        <div className="button-menu-uniqueee">
+                            <Link to ="/employee" className="button-item-uniqueee">Employee Supervision</Link>
+                            <Link to="/assetsHome" className="button-item-uniqueee">Assets Controlling</Link>
+                            <button className="button-item-uniqueee">Permits & Licenses</button>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <button className="nav-buttonhead">Health</button>
-                        <div className="button-menu">
-                            <button className="button-item">Healthcare & Social</button>
+                    <li className="nav-item-uniqueee">
+                        <button className="nav-buttonhead-uniqueee">Health</button>
+                        <div className="button-menu-uniqueee">
+                            <button className="button-item-uniqueee">Healthcare & Social</button>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <button className="nav-buttonhead">City Monitoring</button>
-                        <div className="button-menu">
-                            <Link to ="/street" button className="button-item">Street Controlling</Link>
-                            <Link to =""button className="button-item">Waste Management</Link>
-                            <button className="button-item">Contact Us</button>
+                    <li className="nav-item-uniqueee">
+                        <button className="nav-buttonhead-uniqueee">City Monitoring</button>
+                        <div className="button-menu-uniqueee">
+                            <Link to ="/street" className="button-item-uniqueee">Street Controlling</Link>
+                            <Link to ="/itemdetails" className="button-item-uniqueee">Waste Management</Link>
+                            <button className="button-item-uniqueee">Contact Us</button>
                         </div>
                     </li>
-                    <li className="nav-item">
-                        <button className="nav-buttonhead">Feedbacks</button>
-                        <div className="button-menu">
-                        <Link to ="/FeedbackForm" button className="button-item">Add Feedback</Link>
-                        <Link to="/FeedbackList" className="button-item">View Feedback</Link>
+                    <li className="nav-item-uniqueee">
+                        <button className="nav-buttonhead-uniqueee">Feedbacks</button>
+                        <div className="button-menu-uniqueee">
+                        <Link to ="/FeedbackForm" className="button-item-uniqueee">Add Feedback</Link>
+                        <Link to="/FeedbackList" className="button-item-uniqueee">View Feedback</Link>
                         </div>
                     </li>
                 </ul>
             </nav>
-            <div className="council-name-head">
+            <div className="council-head-uniqueee">
                 <h2>PANADURA</h2>
                 <h3>MUNICIPAL COUNCIL</h3>
             </div>
         </div>
-        <div className="logo-container">
-            <img src={logo1} alt="Logo 1" className="logo" />
-            <img src={logo2} alt="Logo 2" className="logo" />
+        <div className="logo-container-uniqueee">
+            <img src={logo1} alt="Logo 1" className="logo-uniqueee" />
+            <img src={logo2} alt="Logo 2" className="logo-uniqueee" />
         </div>
-        <hr className="divider" />
+        <hr className="divider-uniqueee" />
     </header>
     );
 }

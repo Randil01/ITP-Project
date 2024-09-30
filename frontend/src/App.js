@@ -21,6 +21,11 @@ import IssueNotification from './components/Street mangment/IssueNotification'
 import FeedbackForm from "./components/feedback/FeedbackForm";
 import FeedbackList from "./components/feedback/FeedbackList";
 import AdminFeedbackView from "./components/Admin/Feedback/AdminFeedbackView";
+import ItemDetails from './components/wastemanagement/Itemdetails'
+import Product from './components/wastemanagement/product'
+import UpdateItem from './components/wastemanagement/UpdateItem'
+import ItemRepoart from './components/wastemanagement/ItemRepoart'
+
 
 
 function App() {
@@ -53,7 +58,13 @@ function App() {
           <Route path='/issues' element={<Issues />} />
           <Route path="/manage/:id" element={<ManageIssue />} />
           <Route path='/notification' element={<IssueNotification />} />
-
+          
+          //vanuja
+          <Route path='/itemdetails' element={<ItemDetails/>} />
+          <Route path='/add-item' element={<Product />} />
+          <Route path='/itemupdate/:id' element={<UpdateItem />} />
+          <Route path='/itemrepoart' element={<ItemRepoart />} />
+          <Route path='/dashboard' element={<ItemRepoart />} />
         </Routes>
       </React.Fragment>
     </div>
