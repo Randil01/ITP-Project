@@ -39,6 +39,14 @@ body::before {
     border-radius: 5px;
     font-size: 16px;
 }
+.Descrption-new{
+    width: 380px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
 /* Button container for flex layout */
 .button-container {

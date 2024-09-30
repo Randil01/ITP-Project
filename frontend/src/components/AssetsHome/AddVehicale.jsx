@@ -158,7 +158,7 @@ function AddVehicale() {
         <div>
           <label htmlFor="Descrption">Description:</label>
           <textarea
-            className="Descrption"
+            className="Descrption-new"
             placeholder="Enter any other specifications of vehicle"
             name="Descrption"
             onChange={handleChange}
