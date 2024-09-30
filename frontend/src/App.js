@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import AppHeader from "./components/header/header";
 import AsetsHome from "./components/AssetsHome/assetsHome";
 import VehicaleAll from"./components/AssetsHome/VehicaleAll";
@@ -21,6 +22,7 @@ import FeedbackForm from "./components/feedback/FeedbackForm";
 import FeedbackList from "./components/feedback/FeedbackList";
 import AdminFeedbackView from "./components/Admin/Feedback/AdminFeedbackView";
 
+
 function App() {
   return (
     <div className="App">
@@ -41,12 +43,9 @@ function App() {
           <Route path="/manageEmployee" element={<ManageEmployee />} />
           <Route path="/manageSalary" element={<ManageSalary />} />
 
-
           <Route path='/feedbackform' element={<FeedbackForm />} />
           <Route path='/feedbacklist' element={<FeedbackList />} />
           <Route path='/AdminFeedbackView' element={<AdminFeedbackView />} />
-
-
 
           //vishwa
           <Route path='/street' element={< Menu/>} />
@@ -54,11 +53,13 @@ function App() {
           <Route path='/issues' element={<Issues />} />
           <Route path="/manage/:id" element={<ManageIssue />} />
           <Route path='/notification' element={<IssueNotification />} />
+
         </Routes>
       </React.Fragment>
     </div>
   );
 }
+
 
 export default App;
  

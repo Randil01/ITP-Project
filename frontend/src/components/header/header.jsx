@@ -38,8 +38,8 @@ function Header() {
                     <li className="nav-item">
                         <button className="nav-buttonhead">City Monitoring</button>
                         <div className="button-menu">
-                            <Link to="/street" button className="button-item">Street Controlling</Link>
-                            <button className="button-item">Waste Management</button>
+                            <Link to ="/street" button className="button-item">Street Controlling</Link>
+                            <Link to =""button className="button-item">Waste Management</Link>
                             <button className="button-item">Contact Us</button>
                         </div>
                     </li>
@@ -47,7 +47,7 @@ function Header() {
                         <button className="nav-buttonhead">Feedbacks</button>
                         <div className="button-menu">
                         <Link to ="/FeedbackForm" button className="button-item">Add Feedback</Link>
-                            <Link to="/FeedbackList" className="button-item">View Feedback</Link>
+                        <Link to="/FeedbackList" className="button-item">View Feedback</Link>
                         </div>
                     </li>
                 </ul>

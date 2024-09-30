@@ -52,6 +52,7 @@ app.use("/salary", salaryRouter);
 const postRoutes = require('./routes/route');
 app.use(postRoutes);
 
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
