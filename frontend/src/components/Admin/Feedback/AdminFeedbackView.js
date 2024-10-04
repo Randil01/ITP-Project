@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import FeedbackTable from "./FeedbackTable";
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../../header/header";
+import Header from "../header/header";
 
 const AdminFeedbackView = () => {
     const [feedback, setFeedback] = useState([]);

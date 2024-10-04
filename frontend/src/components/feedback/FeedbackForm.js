@@ -94,64 +94,71 @@ function FeedbackForm() {
       <Header/>
 
       <div className="feedback-form-container">
-        <h2>Feedback Form</h2>
-        <form onSubmit={handleSubmit} className="feedback-form">
-          <div className="form-group">
-            <input
-              id="employeeName"
-              type="text"
-              placeholder="Enter your Username"
-              value={employeeName}
-              onChange={(e) => setEmployeeName(e.target.value)}
-              required
-              aria-required="true"
-            />
-          </div>
-          <div className="form-group">
-            <input
-              id="employeeEmail"
-              type="email"
-              placeholder="Enter your Email"
-              value={employeeEmail}
-              onChange={(e) => setEmployeeEmail(e.target.value)}
-              required
-              aria-required="true"
-            />
-          </div>
-          <div className="form-group">
-            <select
-              id="department"
-              value={department}
-              onChange={(e) => setDepartment(e.target.value)}
-              required
-              aria-required="true"
-            >
-              <option value="">Select Department</option>
-              <option value="Healthcare and Social">Healthcare and Social</option>
-              <option value="Street Controlling">Street Controlling</option>
-              <option value="Waste Management">Waste Management</option>
-              <option value="Event & Places Management">Event & Places Management</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <StarRating rating={rating} onRatingChange={setRating} />
-          </div>
-          <div className="form-group">
-            <textarea
-              id="feedback"
-              placeholder="Add your Feedback"
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              required
-              aria-required="true"
-            />
-          </div>
-          <div className="form-actions">
-            <button type="submit" className="submit-button">Submit Feedback</button>
-            <button type="button" className="clear-button" onClick={handleClear}>Cancel</button>
-          </div>
-        </form>
-      </div>
+  <h2>Feedback Form</h2>
+  <form onSubmit={handleSubmit} className="feedback-form">
+    <div className="form-group">
+      <input
+        id="employeeName"
+        type="text"
+        placeholder="Enter your Username"
+        value={employeeName}
+        onChange={(e) => {
+          const value = e.target.value;
+          // Use a regular expression to allow only letters and spaces
+          if (/^[a-zA-Z\s]*$/.test(value)) {
+            setEmployeeName(value);
+          }
+        }}
+        required
+        aria-required="true"
+      />
+    </div>
+    <div className="form-group">
+      <input
+        id="employeeEmail"
+        type="email"
+        placeholder="Enter your Email"
+        value={employeeEmail}
+        onChange={(e) => setEmployeeEmail(e.target.value)}
+        required
+        aria-required="true"
+      />
+    </div>
+    <div className="form-group">
+      <select
+        id="department"
+        value={department}
+        onChange={(e) => setDepartment(e.target.value)}
+        required
+        aria-required="true"
+      >
+        <option value="">Select Department</option>
+        <option value="Healthcare and Social">Healthcare and Social</option>
+        <option value="Street Controlling">Street Controlling</option>
+        <option value="Waste Management">Waste Management</option>
+        <option value="Event & Places Management">Event & Places Management</option>
+      </select>
+    </div>
+    <div className="form-group">
+      <StarRating rating={rating} onRatingChange={setRating} />
+    </div>
+    <div className="form-group">
+      <textarea
+        id="feedback"
+        placeholder="Add your Feedback"
+        value={feedback}
+        onChange={(e) => setFeedback(e.target.value)}
+        required
+        aria-required="true"
+      />
+    </div>
+    <div className="form-actions">
+      <button type="submit" className="submit-button">Submit Feedback</button>
+      <button type="button" className="clear-button" onClick={handleClear}>Cancel</button>
+    </div>
+  </form>
+</div>
+
     </div>
   );
 }
