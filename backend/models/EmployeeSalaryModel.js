@@ -3,12 +3,11 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const EmployeeSalarySchema = new schema({
-    //for login
+
     empName: {
         type: String,
         required: true
     },
-    //for login
     password: {
         type: String,
     },

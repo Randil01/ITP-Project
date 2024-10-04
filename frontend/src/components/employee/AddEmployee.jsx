@@ -45,7 +45,7 @@ const AddEmployee = () => {
     try {
       await axios.post('http://localhost:5000/employee/add', employee);
       alert('Employee added successfully');
-      navigate('/'); 
+      navigate('/employee'); 
     } catch (error) {
       console.error(error);
       setError('Error adding employee.');
