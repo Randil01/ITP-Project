@@ -1,0 +1,89 @@
+/* Container for Add Product Form */
+.add-product {
+  max-width: 500px;
+  margin: 5% auto; /* Added top margin for spacing */
+  padding: 20px;
+  background-color: #dce7f3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.add-product h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Label Styling */
+.add-product label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Input Field Styling */
+.add-product input[type="text"],
+.add-product input[type="date"],
+.add-product select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus State for Input Fields */
+.add-product input[type="text"]:focus,
+.add-product input[type="date"]:focus,
+.add-product select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Error Message Styling */
+.add-product .error {
+  color: #d9534f; /* Error message color */
+  font-size: 12px;
+  margin-top: -10px; /* Adjusts position relative to input field */
+  margin-bottom: 10px;
+}
+
+/* Submit Button Styling */
+.add-product button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.add-product button:hover {
+  background-color: #0056b3;
+}
+
+/* Button Active State */
+.add-product button:active {
+  background-color: #003f7f;
+}
+
+/* Focus State for Buttons */
+.add-product button:focus {
+  outline: none;
+}
+
+/* Break Element Margin */
+.add-product br {
+  margin-bottom: 15px;
+}
