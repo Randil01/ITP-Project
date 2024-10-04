@@ -1,0 +1,53 @@
+.manage-employee-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-button-emp {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th, .employee-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.update-button, .delete-button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.update-button:hover, .delete-button:hover {
+  opacity: 0.8;
+}
