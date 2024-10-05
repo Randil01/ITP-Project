@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
-require("dotenv").config();
+dotenv.config();
 
 // Port configuration
 const PORT = process.env.PORT || 5000;
@@ -52,7 +52,11 @@ app.use("/salary", salaryRouter);
 const postRoutes = require('./routes/route');
 app.use(postRoutes);
 
-//vanuja
+// Emergency Services Router
+const emergencyRouter = require('./routes/emergencyRoutes');  // <-- New line added
+app.use('/api', emergencyRouter);  // <-- New line added
+
+// Vanuja
 const itemRoutes = require("./routes/itemroutes");
 app.use("/", itemRoutes);
 

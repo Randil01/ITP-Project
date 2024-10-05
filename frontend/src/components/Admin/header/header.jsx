@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
 import logo1 from './images/Gov_sl.png';
 import logo2 from './images/panadura_mn.png';
 import './header.css'; 
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserShield } from '@fortawesome/free-solid-svg-icons';
+
 
 function Header() {
     
