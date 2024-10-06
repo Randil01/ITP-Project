@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './AddVehicale.css'
 
 function UpdateAssets() {
   const [inputs, setInputs] = useState({});
@@ -126,6 +127,7 @@ function UpdateAssets() {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
+      <h2>Update Assets Details</h2>
         <div>
           <label htmlFor="Assets_Type">Assets Type:</label>
           <input
@@ -195,7 +197,7 @@ function UpdateAssets() {
         <div>
           <label htmlFor="Descrption">Description:</label>
           <textarea
-            className="Descrption"
+            className="Descrption-new"
             placeholder="Enter any other specifiaction of the assets"
             name="Description"
             onChange={handleChange}

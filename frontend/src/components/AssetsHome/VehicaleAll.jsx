@@ -52,13 +52,13 @@ function Vehicale() {
     return (
         <div>
             <Header />
-            <Link to="/AddVehicale"><button className="btn-add"> Add New Vehicle </button></Link>
-            <button className="btn-pdf" onClick={handlePrint}>Download report in PDF</button>
-            <h1 className="head1">Vehicles and Accessories</h1>
-            <input type="text" className="search" placeholder="Search vehicle by id or type" value={searchQuery} onChange={handleSearch} />
-            <div className="display">
+            <Link to="/AddVehicale"><button className="assets-btn-add"> Add New Vehicle </button></Link>
+            <button className="assets-btn-pdf" onClick={handlePrint}>Download report in PDF</button>
+            <h1 className="assets-head1">Vehicles and Accessories</h1>
+            <input type="text" className="assets-search" placeholder="Search vehicle by id or type" value={searchQuery} onChange={handleSearch} />
+            <div className="assets-display">
                 {filterVehicales && filterVehicales.map((vehicale, i) => (
-                    <div key={i} className="vehicle-item">
+                    <div key={i} className="assets-vehicle-item">
                         <h3>Type: {vehicale.Vehicale_Type}</h3>
                         <p>Vehicle Number: {vehicale.Vehicale_Number}</p>
                         <p>System ID: {vehicale._id}</p>
@@ -66,8 +66,8 @@ function Vehicale() {
                         <p>Last Maintenance Date: {new Date(vehicale.LastMaintanceDate).toLocaleDateString()}</p>
                         <p>Reserve Status: {vehicale.ReserveStatues}</p>
                         <p>Description: {vehicale.Descrption}</p>
-                        <Link to={`/VehicaleUpdate/${vehicale._id}`}><button className="btn-update"> Update </button></Link>
-                        <button className="btn-delete" onClick={() => deleteHandler(vehicale._id)}>Delete</button>
+                        <Link to={`/VehicaleUpdate/${vehicale._id}`}><button className="assets-btn-update"> Update </button></Link>
+                        <button className="assets-btn-delete" onClick={() => deleteHandler(vehicale._id)}>Delete</button>
                     </div>
                 ))}
             </div>

@@ -9,7 +9,7 @@ import { faUserShield } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   return (
     <header className="hdr-wrapper-uniqueee">
-      <div className="bar-green-uniqueee">
+      <div className="bar-green-uniqueee-header">
         <nav>
           <ul className="nav-uniqueee">
             <li>

@@ -55,13 +55,13 @@ function PublicAssetsAll(){
     return(
         <div>
             <Header/>
-            <Link to="/addAssets"><button className="btn-add">Add New Assets </button></Link>
-            <button className="btn-pdf" onClick={handlePrint}>Downlod report in PDF</button>
-            <h1 class="head1">Public assets and Others</h1>
-            <input type="text" className="search" placeholder="Search assets by id or type" value={searchQuery} onChange={handleSearch}/>
-            <div class="display">
+            <Link to="/addAssets"><button className="assets-btn-add">Add New Assets </button></Link>
+            <button className="assets-btn-pdf" onClick={handlePrint}>Downlod report in PDF</button>
+            <h1 class="assets-head1">Public assets and Others</h1>
+            <input type="text" className="assets-search" placeholder="Search assets by id or type" value={searchQuery} onChange={handleSearch}/>
+            <div class="assets-display">
             {filterAssets&& filterAssets.map((Assets,i)=>(
-                  <div key={i} className="vehicle-item">
+                  <div key={i} className="assets-vehicle-item">
                   <h3>Type: {Assets.Assets_Type}</h3>
                   <p>System ID:{Assets._id}</p>
                   <p>Received Date: {new Date(Assets.RecivedDate).toLocaleDateString()}</p>
@@ -69,8 +69,8 @@ function PublicAssetsAll(){
                   <p>Reseved Till: {new Date(Assets.RecivaedTimePeriod).toLocaleDateString()}</p>
                   <p>Maintance Cost: {Assets.maintanceCost}</p>
                   <p>Description: {Assets.Description}</p>
-                  <Link to={`/updateAssets/${Assets._id}`}><button className="btn-update"> Update </button></Link>
-                  <button className="btn-delete" onClick={()=> deleteHandler(Assets._id)}>Delete</button>
+                  <Link to={`/updateAssets/${Assets._id}`}><button className="assets-btn-update"> Update </button></Link>
+                  <button className="assets-btn-delete" onClick={()=> deleteHandler(Assets._id)}>Delete</button>
               </div>
             ))}
             </div>

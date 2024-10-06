@@ -5,14 +5,14 @@ body {
     background-color: #f4f4f4;
 }
 
-.head1 {
+.assets-head1 {
     text-align: center;
     margin-top: 30px;
     font-size: 36px;
     color: #333;
 }
 
-.display {
+.assets-display {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
 }
 
 /* Styles for search bar */
-.search {
+.assets-search {
     top: 20px;
     right: 20px; 
     width: 250px; 
@@ -35,39 +35,40 @@ body {
     z-index: 1;
 }
 
-.search:focus {
+.assets-search:focus {
     border-color: #df2b0b; 
     box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Shadow effect on focus */
 }
 
 /* Individual vehicle details container */
-.vehicle-item {
+.assets-vehicle-item {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 15px;
-    width: 300px;
+    margin: 30px;
+    width: 350px;
     transition: transform 0.2s ease-in-out;
+    justify-content: center;
 }
 
-.vehicle-item:hover {
+.assets-vehicle-item:hover {
     transform: scale(1.05);
 }
 
-.vehicle-item h3 {
+.assets-vehicle-item h3 {
     color: #4CAF50;
     margin-bottom: 10px;
 }
 
-.vehicle-item p {
+.assets-vehicle-item p {
     color: #555;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 2.9;
 }
 
 /* Style for buttons */
-.btn-update, .btn-delete {
+.assets-btn-update, .assets-btn-delete {
     display: inline-block;
     padding: 5px 10px;
     margin: 10px 10px;
@@ -79,7 +80,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.btn-add {
+.assets-btn-add {
     background-color: #f46157;
     display: block;
     padding: 10px 20px;
@@ -94,7 +95,7 @@ body {
     width: fit-content;
 }
 
-.btn-pdf {
+.assets-btn-pdf {
     background-color: #f46157;
     display: block;
     padding: 10px 20px;
@@ -110,26 +111,26 @@ body {
 }
 
 /* Update button specific styles */
-.btn-update {
+.assets-btn-update {
     background-color: #4CAF50;
     border: none;
 }
 
-.btn-update:hover {
+.assets-btn-update:hover {
     background-color: #45a049;
 }
 
-.btn-delete {
+.assets-btn-delete {
     background-color: #f44336; 
     border: none;
 }
 
-.btn-delete:hover {
+.assets-btn-delete:hover {
     background-color: #d32f2f;
 }
 
 @media (max-width: 768px) {
-    .vehicle-item {
+    .assets-vehicle-item {
         width: 90%;
     }
 }

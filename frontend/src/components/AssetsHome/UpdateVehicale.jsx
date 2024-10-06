@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import './AddVehicale.css'
 
 function UpdateVehicale() {
     const [inputs, setInputs] = useState({
@@ -90,6 +91,7 @@ function UpdateVehicale() {
     return (
         <div className="form-container">
             <form onSubmit={handleSubmit}>
+            <h2>Update Vehicale Details</h2>
                 <div>
                     <label htmlFor="Vehicale_Number">Vehicle Number:</label>
                     <input
@@ -162,7 +164,7 @@ function UpdateVehicale() {
                 <div>
                     <label htmlFor="Descrption">Description:</label>
                     <textarea
-                        className="Descrption"
+                        className="Descrption-new"
                         placeholder="Enter any other specifications of vehicle"
                         name="Descrption"
                         onChange={handleChange}

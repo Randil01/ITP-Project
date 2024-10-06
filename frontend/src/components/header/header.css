@@ -5,14 +5,14 @@
     width: 100%;
 }
 
-.bar-green-uniqueee {
+.bar-green-uniqueee-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #4CAF50;
     padding: 10px 0;
     width: 100%;
-    height: 50px;
+    height: 70px;
 }
 
 .logo-container-uniqueee {

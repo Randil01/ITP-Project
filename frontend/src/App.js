@@ -1,6 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import React from "react";
 import { useAuth } from './context/AuthContext'; // Adjust the path as needed
+import Home from "./components/Home/home";
 import AppHeader from "./components/header/header";
 import AsetsHome from "./components/AssetsHome/assetsHome";
 import VehicaleAll from "./components/AssetsHome/VehicaleAll";
@@ -38,7 +39,8 @@ function App() {
   return (
     <div className="App">
         <Routes>
-          <Route path="/" element={<AppHeader />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/app" element={<AppHeader />} />
           <Route path="/login" element={<Login />} />
           <Route path="/assetsHome" element={<ProtectedRoute element={<AsetsHome />} isAuthenticated={isAuthenticated}/>}/>
           <Route path="/vehicaleall" element={<ProtectedRoute element={<VehicaleAll />} isAuthenticated={isAuthenticated}/>}/>
