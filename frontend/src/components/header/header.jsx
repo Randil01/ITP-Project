@@ -13,9 +13,9 @@ function Header() {
         <nav>
           <ul className="nav-uniqueee">
             <li>
-              <a href="/" className="nav-link-uniqueee">
+              <Link to="/"className="nav-link-uniqueee">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item-uniqueee">
               <button className="nav-buttonhead-uniqueee">
