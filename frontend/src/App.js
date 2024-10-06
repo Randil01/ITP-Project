@@ -28,28 +28,31 @@ import ItemRepoart from './components/wastemanagement/ItemRepoart';
 import AdminLogin from './components/Admin/AdminLogin/AdminLogin';
 import AdminDashboard from './components/Admin/AdminLogin/AdminDashboard';
 import Chatbot from "./components/Chatbot";
+import Login from './components/login';
+import ProtectedRoute from "./protectedRoute";
 
 function App() {
   const { isAdminLoggedIn } = useAuth(); // Get the authentication state
-
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  
   return (
     <div className="App">
-      <React.Fragment>
         <Routes>
           <Route path="/" element={<AppHeader />} />
-          <Route path="/assetsHome" element={<AsetsHome />} />
-          <Route path="/vehicaleall" element={<VehicaleAll />} />
-          <Route path="/AddVehicale" element={<AddVehicale />} />
-          <Route path="/VehicaleUpdate/:id" element={<UpdateVehicale />} />
-          <Route path="/pAssetsAll" element={<PAssetsAll />} />
-          <Route path="/addAssets" element={<AddAssets />} />
-          <Route path="/updateAssets/:id" element={<UpdateAssets />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/assetsHome" element={<ProtectedRoute element={<AsetsHome />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/vehicaleall" element={<ProtectedRoute element={<VehicaleAll />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/AddVehicale" element={<ProtectedRoute element={<AddVehicale />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/VehicaleUpdate/:id" element={<ProtectedRoute element={<UpdateVehicale />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/pAssetsAll" element={<ProtectedRoute element={<PAssetsAll />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/addAssets" element={<ProtectedRoute element={<AddAssets />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/updateAssets/:id" element={<ProtectedRoute element={<UpdateAssets />} isAuthenticated={isAuthenticated}/>}/>
           
           {/* Employee routes */}
-          <Route path="/employee" element={<DisplayDetails />} />
-          <Route path="/addEmployee" element={<AddEmployee />} />
-          <Route path="/manageEmployee" element={<ManageEmployee />} />
-          <Route path="/manageSalary" element={<ManageSalary />} />
+          <Route path="/employee" element={<ProtectedRoute element={<DisplayDetails />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/addEmployee" element={<ProtectedRoute element={<AddEmployee />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/manageEmployee" element={<ProtectedRoute element={<ManageEmployee />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/manageSalary" element={<ProtectedRoute element={<ManageSalary />} isAuthenticated={isAuthenticated}/>}/>
 
           {/* Feedback routes */}
           <Route path='/feedbackform' element={<FeedbackForm />} />
@@ -57,18 +60,18 @@ function App() {
           <Route path='/AdminFeedbackView' element={<AdminFeedbackView />} />
 
           {/* Street management routes */}
-          <Route path='/street' element={<Menu />} />
-          <Route path='/add' element={<Add />} />
-          <Route path='/issues' element={<Issues />} />
-          <Route path="/manage/:id" element={<ManageIssue />} />
-          <Route path='/notification' element={<IssueNotification />} />
+          <Route path="/street" element={<ProtectedRoute element={<Menu />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/add" element={<ProtectedRoute element={<Add />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/issues" element={<ProtectedRoute element={<Issues />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/manage/:id" element={<ProtectedRoute element={<ManageIssue />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/notification" element={<ProtectedRoute element={<IssueNotification />} isAuthenticated={isAuthenticated}/>}/>
 
           {/* Waste management routes */}
-          <Route path='/itemdetails' element={<ItemDetails />} />
-          <Route path='/add-item' element={<Product />} />
-          <Route path='/itemupdate/:id' element={<UpdateItem />} />
-          <Route path='/itemrepoart' element={<ItemRepoart />} />
-          <Route path='/dashboard' element={<ItemRepoart />} />
+          <Route path="/itemdetails" element={<ProtectedRoute element={<ItemDetails />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path='/add-item' element={<ProtectedRoute element={<Product />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/itemupdate/:id" element={<ProtectedRoute element={<UpdateItem />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/itemrepoart" element={<ProtectedRoute element={<ItemRepoart />} isAuthenticated={isAuthenticated}/>}/>
+          <Route path="/dashboard" element={<ProtectedRoute element={<ItemRepoart />} isAuthenticated={isAuthenticated}/>}/>
 
           {/* Admin routes */}
           <Route path="/adminLogin" element={<AdminLogin />} />
@@ -80,7 +83,6 @@ function App() {
 
         {/* Place the ChatBot component here */}
         <Chatbot/> 
-      </React.Fragment>
     </div>
   );
 }

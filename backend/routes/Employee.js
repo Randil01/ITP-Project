@@ -113,6 +113,29 @@ router.route('/:id').get((req, res) => {
         .catch(err => res.status(500).json({ error: err.message }));
 });
 
+//login
+router.route('/login').post(async (req, res) => {
+    const { empEmail, empName } = req.body;
+    
+    try {
+        const normalizedEmail = empEmail.trim().toLowerCase();
+        const normalizedName = empName.trim();
+
+        const employee = await EmployeeSalary.findOne({
+            empEmail: normalizedEmail,
+            empName: normalizedName
+        });
+
+        if (employee) {
+            res.status(200).json({ message: 'Login successful', employee });
+        } else {
+            res.status(404).json({ message: 'Invalid credentials' });
+        }
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 
 router.route('/delete/:id').delete((req, res) => {
     const empId = req.params.id;

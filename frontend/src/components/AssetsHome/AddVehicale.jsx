@@ -86,6 +86,7 @@ function AddVehicale() {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
+      <h2>Add Vehicale</h2>
         <div>
           <label htmlFor="Vehicale_Number">Vehicle Number:</label>
           <input

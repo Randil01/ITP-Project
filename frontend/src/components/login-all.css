@@ -1,0 +1,89 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-forall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 380px;
+    height: 400px;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+
+.login-forall h2 {
+    margin-bottom: 30px;
+}
+
+
+.login-forall div {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+.login-forall label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.login-forall input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-forall button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    transition: background-color 0.3s;
+    margin-left: 60px;
+}
+
+.login-forall button:hover {
+    background-color: #45a049; 
+}
+
+
+.login-forall .close-button {
+    text-decoration: none; 
+    padding: 10px 15px;
+    border:#ccc;
+    border-radius: 5px;
+    width: 80px;
+    background-color: #4CAF50; 
+    color: white;
+    cursor: pointer;
+    margin-left: 10px; 
+    display: inline-block; 
+}
+
+
+.login-forall .close-button:hover {
+    background-color: #137910;
+}
+
+
+.login-forall p {
+    color: red;
+    margin-top: 10px;
+}

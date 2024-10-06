@@ -108,6 +108,7 @@ function AddAsset() {
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
+        <h2>Add Assets</h2>
         <div>
           <label htmlFor="Assets_Type">Assets Type:</label>
           <input type="text" placeholder="Enter Asset number with location" className="Vehicale_Type" name="Assets_Type" onChange={handleChange} value={inputs.Assets_Type} required/>
