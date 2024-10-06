@@ -52,7 +52,6 @@ function Header() {
                 <Link to="/login" className="button-item-uniqueee">
                   Waste Management
                 </Link>
-                <button className="button-item-uniqueee">Contact Us</button>
               </div>
             </li>
             <li className="nav-item-uniqueee">
