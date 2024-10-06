@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom"; // Ensure Navigate is imported
+import { Route, Routes, Navigate } from "react-router-dom";
 import React from "react";
 import { useAuth } from './context/AuthContext'; // Adjust the path as needed
 import AppHeader from "./components/header/header";
@@ -27,15 +27,14 @@ import UpdateItem from './components/wastemanagement/UpdateItem';
 import ItemRepoart from './components/wastemanagement/ItemRepoart';
 import AdminLogin from './components/Admin/AdminLogin/AdminLogin';
 import AdminDashboard from './components/Admin/AdminLogin/AdminDashboard';
-import Login from './components/login'
+import Chatbot from "./components/Chatbot";
+import Login from './components/login';
 import ProtectedRoute from "./protectedRoute";
-
 
 function App() {
   const { isAdminLoggedIn } = useAuth(); // Get the authentication state
   const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
   
-
   return (
     <div className="App">
         <Routes>
@@ -76,8 +75,14 @@ function App() {
 
           {/* Admin routes */}
           <Route path="/adminLogin" element={<AdminLogin />} />
-          <Route path="/adminDashboard"element={isAdminLoggedIn ? <AdminDashboard /> : <Navigate to="/adminLogin" />} />
+          <Route
+              path="/adminDashboard"
+              element={isAdminLoggedIn ? <AdminDashboard /> : <Navigate to="/adminLogin" />}
+          />
         </Routes>
+
+        {/* Place the ChatBot component here */}
+        <Chatbot/> 
     </div>
   );
 }
