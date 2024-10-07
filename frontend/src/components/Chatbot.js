@@ -25,10 +25,10 @@ const Chatbot = () => {
         phoneNumber = '1990';
         break;
       case 'waterBoard':
-        phoneNumber = '112'; // You can add a number if applicable
+        phoneNumber = '112'; 
         break;
       case 'disaster':
-        phoneNumber = '117'; // You can add a number if applicable
+        phoneNumber = '117'; 
         break;
       default:
         phoneNumber = '';
