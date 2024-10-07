@@ -25,10 +25,10 @@ const Chatbot = () => {
         phoneNumber = '1990';
         break;
       case 'waterBoard':
-        phoneNumber = ''; // You can add a number if applicable
+        phoneNumber = '112'; // You can add a number if applicable
         break;
       case 'disaster':
-        phoneNumber = ''; // You can add a number if applicable
+        phoneNumber = '117'; // You can add a number if applicable
         break;
       default:
         phoneNumber = '';
@@ -61,10 +61,10 @@ const Chatbot = () => {
             <FaAmbulance /> Ambulance (1990)
           </button>
           <button onClick={() => handleServiceClick('waterBoard')}>
-            <FaWater /> Water Board
+            <FaWater /> Water Board (112)
           </button>
           <button onClick={() => handleServiceClick('disaster')}>
-            <FaExclamationTriangle /> Disaster Services
+            <FaExclamationTriangle /> Disaster Services (117)
           </button>
           {message && <p>{message}</p>}
         </div>
