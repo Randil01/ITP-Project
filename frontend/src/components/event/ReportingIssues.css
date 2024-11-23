@@ -1,0 +1,119 @@
+ebbody {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.ebreporting-issues {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ebh2 {
+  color: #333;
+}
+
+ebtextarea,
+ebinput[type="email"],
+ebinput[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+ebinput[type="text"] {
+  width: calc(50% - 20px);
+  display: inline-block;
+}
+
+ebbutton {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ebbutton:hover {
+  background-color: darkgreen;
+}
+
+.ebsubmit-button {
+  float: right;
+}
+
+.ebsearch-container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.ebsearch-container input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.ebreports-container {
+  margin-top: 20px;
+}
+
+.ebreports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ebreports-table th,
+.ebreports-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.ebreports-table th {
+  background-color: green;
+  color: white;
+}
+
+.ebedit-button,
+.ebdelete-button {
+  background-color: blue;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ebedit-button:hover {
+  background-color: darkblue;
+}
+
+.ebdelete-button {
+  background-color: red;
+}
+
+.ebdelete-button:hover {
+  background-color: darkred;
+}
+
+.eberror {
+  color: red;
+  margin: 10px 0;
+}
+
+.ebprint-button {
+  margin-top: 10px;
+  background-color: orange;
+}
+
+.ebprint-button:hover {
+  background-color: darkorange;
+}

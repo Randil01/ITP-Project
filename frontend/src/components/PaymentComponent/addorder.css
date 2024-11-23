@@ -1,0 +1,159 @@
+.add-order {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5rem; /* Adjust the size as needed */
+  margin-bottom: 20px; /* Add some space below the heading */
+  text-align: center; /* Center the heading */
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"], input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+/* Ensure proper alignment */
+.input-group label, .radio-group label {
+  text-align: left;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add space between radio buttons and labels */
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px; /* Add space between radio button and label */
+}
+
+.error {
+  color: red;
+  margin-left: 10px; /* Adjust error message positioning */
+}
+.inline-label {
+  display: inline;
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+.card-type {
+  display: flex;
+  align-items: center;
+}
+
+.card-type label {
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+/* orderdetails.css */
+.download-button {
+  background-color: #007bff; /* Change this to your desired color */
+  color: white; /* Change this to your desired text color */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Adjust padding */
+  border-radius: 5px; /* Round corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 16px; /* Adjust font size */
+}
+
+.download-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+.showorders {
+  max-width: 100%; /* Allow the container to use full width */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.searchbtn {
+  display: flex; /* Use flexbox for better alignment */
+  justify-content: space-between; /* Distribute space between items */
+  width: 100%; /* Use full width */
+  margin-bottom: 20px; /* Space between the search and the table */
+}
+
+.in {
+  flex: 1; /* Allow the input to grow */
+  margin-right: 10px; /* Space between input and button */
+  padding: 10px; /* Padding inside the input */
+  font-size: 16px; /* Font size for better visibility */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 5px; /* Rounded corners */
+}
+
+button {
+  padding: 10px 20px; /* Padding inside buttons */
+  font-size: 16px; /* Font size for buttons */
+  border-radius: 5px; /* Rounded corners for buttons */
+}
+
+

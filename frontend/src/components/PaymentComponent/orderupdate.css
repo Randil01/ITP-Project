@@ -1,0 +1,64 @@
+.order-update {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10%;
+    background-color: rgb(250, 220, 175);
+  }
+  
+  .order-update label {
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  .order-update input[type="text"],
+  .order-update input[type="date"] {
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .order-update button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .order-update button:hover {
+    background-color: #0056b3;
+  }
+  .showorders {
+    max-width: 100%; /* Allow the container to use full width */
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.searchbtn {
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Distribute space between items */
+    width: 100%; /* Use full width */
+    margin-bottom: 20px; /* Space between the search and the table */
+}
+
+.in {
+    flex: 1; /* Allow the input to grow */
+    margin-right: 10px; /* Space between input and button */
+    padding: 10px; /* Padding inside the input */
+    font-size: 16px; /* Font size for better visibility */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button {
+    padding: 10px 20px; /* Padding inside buttons */
+    font-size: 16px; /* Font size for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+}

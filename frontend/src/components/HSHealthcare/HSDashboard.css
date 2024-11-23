@@ -1,0 +1,79 @@
+/* Dashboard container styles */
+.hsdashboard-container {
+  text-align: center;
+  padding: 40px;
+  /*background-image: url('/public/background-pattern.jpg'); /* Optional: Background image */
+  min-height: 100vh;
+}
+
+.hsdashboard-title {
+  color: #006400;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard card styles */
+.hsdashboard-item {
+  padding: 30px;
+  text-align: center;
+  background-color: #d4edda;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: 100%; /* Ensure consistent height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align content properly */
+}
+
+.hsdashboard-item h6 {
+  color: #006400;
+}
+
+/* Global Neon Button Styles (consistent with home CSS) */
+.hsneon-button {
+  background-color: #32cd32; /* Light green */
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32; /* Consistent shadow */
+  transition: 0.3s;
+}
+
+.hsneon-button:hover {
+  box-shadow: 0 0 20px #90ee90, 0 0 40px #90ee90, 0 0 60px #90ee90;
+  background-color: #7fff00;
+  transition: 0.3s ease-in-out;
+}
+
+.hssecondary {
+  background-color: #66cdaa;
+  box-shadow: 0 0 10px #66cdaa, 0 0 20px #66cdaa, 0 0 30px #66cdaa;
+}
+
+.hssuccess {
+  background-color: #3cb371;
+  box-shadow: 0 0 10px #3cb371, 0 0 20px #3cb371, 0 0 30px #3cb371;
+}
+
+.hsneon-button:hover.secondary {
+  box-shadow: 0 0 20px #98fb98, 0 0 40px #98fb98, 0 0 60px #98fb98;
+  background-color: #00fa9a;
+}
+
+.hsneon-button:hover.success {
+  box-shadow: 0 0 20px #00ff7f, 0 0 40px #00ff7f, 0 0 60px #00ff7f;
+  background-color: #2e8b57;
+}
+
+/* Ensure buttons are properly aligned */
+.hsdashboard-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust spacing between buttons */
+}
+
+.hsdashboard-button {
+  width: auto; /* Ensure full-width for alignment */
+  margin-top: 20px;
+}

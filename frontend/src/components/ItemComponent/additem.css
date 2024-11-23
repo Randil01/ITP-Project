@@ -1,0 +1,82 @@
+/* Centering the form wrapper */
+.form-wrapper {
+  position: relative;
+  min-height: 100vh; /* Ensures it takes at least full viewport height */
+  background-color: #f0f0f0; /* Optional: background color for contrast */
+}
+
+.add-product {
+  background-color: #fff; /* White background for form */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Set a max-width to keep the form compact */
+  margin: auto; /* Centers the form horizontally */
+  position: absolute;
+  top: 50%; /* Position it 50% from the top */
+  left: 50%; /* Position it 50% from the left */
+  transform: translate(-50%, -50%); /* Center it */
+}
+
+/* Form elements */
+.add-product form {
+  display: block; /* Stack elements vertically */
+}
+
+.add-product form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.add-product form input,
+.add-product form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.add-product select {
+  width: 100%;
+  padding: 12px; /* Adjust the padding as needed */
+  margin-bottom: 20px;
+  font-size: 16px; /* Decrease font size */
+  height: 25px; /* Increase height */
+}
+.add-product form input:focus,
+.add-product form select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.row {
+  display: block; /* Change to block layout for the rows */
+}
+
+.col {
+  width: 100%; /* Full width for columns */
+}
+
+.add-product button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-product button:hover {
+  background-color: #45a049;
+}
+
+/* Error messages styling */
+.error {
+  color: red;
+  font-size: 12px;
+}

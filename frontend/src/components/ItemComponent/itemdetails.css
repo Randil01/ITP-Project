@@ -1,0 +1,159 @@
+/* Container Styling */
+.showitems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  margin-left: 20%;
+
+}
+#add-product-btn{
+  position: absolute;
+  background-color: #7cdf93;
+  padding:10px;
+  color: white;
+  top: 10%;
+left: 40%;
+border-radius: 10px;
+}
+
+/* Search Button Container */
+.searchbtn {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Search Input Styling */
+.in {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-right: 10px;
+}
+
+.in:focus {
+  border-color: #80bdff;
+}
+
+/* Search Button Styling */
+#search-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1%;
+  margin-right: 80%;
+}
+
+#search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+
+
+/* itemdetails.css */
+.showitems {
+  width: 80%; /* Set the width to 80% (or any other desired value) */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding for better aesthetics */
+}
+
+.searchbtn {
+  display: flex; /* Use flexbox to align elements */
+  justify-content: space-between; /* Space between elements */
+  margin-bottom: 20px; /* Space below the search section */
+}
+
+.in {
+  flex: 1; /* Make the input field take available space */
+  padding: 10px; /* Add padding for the input */
+  margin-right: 10px; /* Space between input and button */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 4px; /* Optional: Add border radius */
+}
+
+table {
+  width: 100%; /* Ensure the table takes the full width */
+  border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+th, td {
+  padding: 15px; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Add a bottom border to rows */
+}
+
+th {
+  background-color: #f2f2f2; /* Light background for header */
+}
+
+button {
+  padding: 10px 20px; /* Add padding for buttons */
+}
+
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Action Links and Buttons */
+table a, table button {
+  margin-right: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+table a:hover, table button:hover {
+  text-decoration: underline;
+}
+
+table button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+table button:hover {
+  text-decoration: underline;
+}
+
+/* Generate PDF Button */
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+.showorders button:hover {
+  background-color:red;
+}
+

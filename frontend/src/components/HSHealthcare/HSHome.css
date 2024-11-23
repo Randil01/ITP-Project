@@ -1,0 +1,109 @@
+/* Global styles */
+body HSHome{
+  background-color: #f0fff0; /* Light greenish background */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure full page height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('/public/hsbackground-pattern.jpg'); /* Optional: Background image */
+  background-size: cover;
+}
+
+/* Header Styles */
+.hsheader {
+  background-color: #81bc84; /* Darker green */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hslogo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between logo and title */
+}
+
+.hslogo {
+  width: 115px; /* Adjust size as needed */
+}
+
+.hsheader-title {
+  color: #045404;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Dark green glowing effect */
+  text-transform: uppercase;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Glow animation for title */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+  to {
+    text-shadow: 0 0 20px rgb(62, 77, 64), 0 0 40px rgba(75, 84, 74, 0.9);
+  }
+}
+
+/* Home Container Styles */
+.hshome-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content at the top initially */
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px; /* Adjust this value to push content lower */
+}
+
+.hsintro-text {
+  color: #006400; /* Dark green */
+  font-weight: bold;
+  margin-bottom: 50px;
+  font-size: 1.8rem; /* Larger text */
+}
+
+
+/* Button Styles */
+.hsneon-button {
+  background-color: #32cd32; /* Light green */
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32; /* Neon glow */
+  transition: 0.3s;
+  padding: 15px;
+}
+
+.hsneon-button:hover {
+  box-shadow: 0 0 20px #90ee90, 0 0 40px #90ee90, 0 0 60px #90ee90;
+  background-color: #7fff00;
+}
+
+/* Description under buttons */
+.hsdescription {
+  margin-top: 10px;
+  color: #333;
+  font-size: 1.1em;
+}
+
+  /* Footer */
+  .hsfooter {
+    text-align: center;
+    padding: 20px;
+    background-color: #d4edda; /* Slightly darker shade of green */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .hsfooter p {
+    color: #006400; /* Dark green */
+  }

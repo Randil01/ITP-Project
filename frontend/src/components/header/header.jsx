@@ -29,7 +29,7 @@ function Header() {
                   Assets Controlling
                 </Link>
                 <button className="button-item-uniqueee">
-                  Permits & Licenses
+                  <Link to="/Permitdetails">Permits & Licenses</Link>
                 </button>
               </div>
             </li>
@@ -37,7 +37,7 @@ function Header() {
               <button className="nav-buttonhead-uniqueee">Health</button>
               <div className="button-menu-uniqueee">
                 <button className="button-item-uniqueee">
-                  Healthcare & Social
+                  <Link to="/HSHome" >Healthcare & Social</Link>
                 </button>
               </div>
             </li>
@@ -51,6 +51,9 @@ function Header() {
                 </Link>
                 <Link to="/login" className="button-item-uniqueee">
                   Waste Management
+                </Link>
+                <Link to="/EBHome" className="button-item-uniqueee">
+                  Event Management
                 </Link>
               </div>
             </li>

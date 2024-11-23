@@ -7,6 +7,14 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 
+// Event
+const bookingRoutes = require('./routes/booking'); 
+const issueReportRoutes = require('./routes/issueReport'); 
+
+// Healthcare
+const appointmentsRoutes = require('./routes/appointmentRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
+
 // Port configuration
 const PORT = process.env.PORT || 5000;
 
@@ -59,6 +67,16 @@ app.use('/api', emergencyRouter);  // <-- New line added
 // Vanuja
 const itemRoutes = require("./routes/itemroutes");
 app.use("/", itemRoutes);
+
+// Healthcare
+app.use('/api/health', require('./routes/healthRoutes'));
+app.use('/api/appointments', require('./routes/appointmentRoutes')); // <-- Add this line
+app.use('/api/appointments', appointmentsRoutes);
+app.use('/api', applicationRoutes);
+
+// Event
+app.use('/api/booking', bookingRoutes); // Use separate booking route
+app.use('/api/issue-reports', issueReportRoutes);
 
 // Start server
 app.listen(PORT, () => {

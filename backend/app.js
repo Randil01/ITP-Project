@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const controller = require('./controllers/feedbackController');
 
+
 app.use(cors()); //cors origin unblocking(cross origine resoures sharing)
 
 app.use(
